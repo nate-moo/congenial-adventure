@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b42kwyk4cjbb2"]
+[gd_scene load_steps=11 format=3 uid="uid://b42kwyk4cjbb2"]
 
 [ext_resource type="Texture2D" uid="uid://brsx7enll7piv" path="res://Tree Mini/Img Trees/Player standing.png" id="1_d6dsg"]
 [ext_resource type="Script" path="res://Tree Mini/new_player.gd" id="1_e5dom"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c76nwyaycsnp4" path="res://Tree Mini/Img Trees/Blowtorch right.png" id="6_f1xkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyv8h"]
-size = Vector2(77, 37.5)
+size = Vector2(50, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yacr0"]
 animations = [{
@@ -30,7 +30,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_45r4g"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ts1w4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -49,11 +49,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbrc8"]
+
 [node name="NewPlayer" type="Area2D"]
 script = ExtResource("1_e5dom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(205, 115)
+position = Vector2(79, 86)
 shape = SubResource("RectangleShape2D_qyv8h")
 metadata/_edit_group_ = true
 
@@ -67,9 +69,14 @@ frame_progress = 0.307938
 metadata/_edit_group_ = true
 
 [node name="Blowtorch" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(2, -32)
-scale = Vector2(0.044526, 0.0495052)
-sprite_frames = SubResource("SpriteFrames_45r4g")
-animation = &"Walk right"
+position = Vector2(1.02017, -25.5)
+scale = Vector2(0.0390189, 0.0397135)
+sprite_frames = SubResource("SpriteFrames_ts1w4")
+animation = &"Walk left"
+
+[node name="Fire blowtorch" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(3.52189, -27.25)
+scale = Vector2(0.0403384, 0.0452474)
+sprite_frames = SubResource("SpriteFrames_dbrc8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
