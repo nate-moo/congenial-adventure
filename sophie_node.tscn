@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://cpjxv5cs7jhlo"]
+[gd_scene load_steps=2 format=3 uid="uid://cpjxv5cs7jhlo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00n7q"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"TrashPlayer1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"TrashPlayer2",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="player-test" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player-test"]
+sprite_frames = SubResource("SpriteFrames_00n7q")
+animation = &"TrashPlayer1"
