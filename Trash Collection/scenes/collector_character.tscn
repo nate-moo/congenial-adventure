@@ -31,18 +31,19 @@ animations = [{
 size = Vector2(118, 157.477)
 
 [node name="Player_Collector" type="Area2D"]
+position = Vector2(8, 7)
 script = ExtResource("1_n1y6s")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(216, 550)
+position = Vector2(-2, 0)
 scale = Vector2(0.375, 0.375)
 sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"TrashPlayer1"
 frame_progress = 0.858939
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(216, 549.5)
+position = Vector2(0, -6.00002)
 scale = Vector2(1, 0.89537)
 shape = SubResource("RectangleShape2D_jrome")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)

@@ -50,7 +50,7 @@ size = Vector2(29, 40)
 [node name="trash-pieces" type="RigidBody2D"]
 position = Vector2(10, 10)
 collision_mask = 0
-gravity_scale = 0.0
+gravity_scale = 0.25
 script = ExtResource("1_a0tu8")
 metadata/_edit_group_ = true
 
