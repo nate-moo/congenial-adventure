@@ -1,9 +1,11 @@
 extends CollisionShape2D
 
-@export var spawn_delay = 1
+@export var spawn_delay = 0.5
+@export var bike_max = 20
 
 var rng = RandomNumberGenerator.new()
 var delta_total = 0
+var bike_count = 0
 var bike
 var width
 var offset
@@ -22,7 +24,7 @@ func _ready():
 func _process(delta):
 	delta_total += delta
 	# Check time passed for time based spawning
-	if (delta_total >= spawn_delay):
+	if (delta_total >= spawn_delay && bike_count < bike_max):
 		delta_total = 0
 		
 		var bike_instance = bike.instantiate()

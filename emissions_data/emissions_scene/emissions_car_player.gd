@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var player_speed = 400
-@export var emit_time = 0.36
+@export var emit_time = 0.25
 @export var shape_scale_factor = 0.321
 var screen_size
 var screen_size_original

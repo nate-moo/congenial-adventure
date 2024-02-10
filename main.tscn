@@ -48,5 +48,18 @@ rotation = -1.57079
 scale = Vector2(0.449896, 0.449896)
 texture = ExtResource("5_0o6sd")
 
+[node name="StaireWarning" type="ConfirmationDialog" parent="."]
+title = "Satire Warning"
+initial_position = 1
+size = Vector2i(577, 106)
+visible = true
+ok_button_text = "Accept"
+dialog_text = "This game is fully satire and should not be replicated in the real world
+Press Accept to continue or Decline to Quit"
+dialog_autowrap = true
+cancel_button_text = "Decline"
+
 [connection signal="pressed" from="Start_Button" to="Start_Button" method="_on_pressed"]
 [connection signal="pressed" from="Quit_Button" to="Quit_Button" method="_on_pressed"]
+[connection signal="canceled" from="StaireWarning" to="." method="_on_staire_warning_canceled"]
+[connection signal="confirmed" from="StaireWarning" to="." method="_on_staire_warning_confirmed"]

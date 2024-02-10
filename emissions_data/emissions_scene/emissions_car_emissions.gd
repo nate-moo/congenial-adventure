@@ -22,3 +22,9 @@ func _on_child_entered_tree(node):
 	node.position.y = emission_y_pos
 
 	pass # Replace with function body.
+
+
+func _on_area_entered(area):
+	#print("Collided")
+	area.visible = false
+	pass # Replace with function body.
