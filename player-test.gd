@@ -1,10 +1,12 @@
 extends Area2D
+signal hit #defines signal called hit
 
 @export var speed = 400
 var screen_size
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	hide()
 	screen_size = get_viewport_rect().size
 
 # $ is shorthand for get_node("item").action() at the 
