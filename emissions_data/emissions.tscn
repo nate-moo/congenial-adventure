@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://daa7yf7iqad7g"]
 
 [ext_resource type="PackedScene" uid="uid://dahtspmp0tyj4" path="res://emissions_data/emissions_car_player.tscn" id="1_txvn2"]
-[ext_resource type="Texture2D" uid="uid://bn4rcvl8ecpr" path="res://images/emissions_game_images/Seamless-Road-Texture1.jpg" id="1_vffgv"]
-[ext_resource type="Script" path="res://scripts/emissions_scene/road_scroll.gd" id="2_4e2lh"]
+[ext_resource type="Texture2D" uid="uid://bn4rcvl8ecpr" path="res://emissions_data/emissions_game_images/Seamless-Road-Texture1.jpg" id="1_vffgv"]
+[ext_resource type="Script" path="res://emissions_data/emissions_scene/road_scroll.gd" id="2_4e2lh"]
 
 [sub_resource type="GDScript" id="GDScript_wa7rs"]
 script/source = "extends Button

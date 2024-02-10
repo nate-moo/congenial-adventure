@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdanaxbnknpkp"
-path="res://.godot/imported/car_top_emissions.svg-c8b755cab9febd840a0ba70a2cd240a3.ctex"
+uid="uid://bkdrtnihees4t"
+path="res://.godot/imported/bottle.png-23df09ae25d1c4cc8c76dfce6e7d6859.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/emissions_game_images/car_top_emissions.svg"
-dest_files=["res://.godot/imported/car_top_emissions.svg-c8b755cab9febd840a0ba70a2cd240a3.ctex"]
+source_file="res://Trash Collection/images/bottle.png"
+dest_files=["res://.godot/imported/bottle.png-23df09ae25d1c4cc8c76dfce6e7d6859.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

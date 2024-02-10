@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq3ryf3wtrb7v"
-path="res://.godot/imported/paper_wad.png-41cdf290a0b1bbbd1bf55f998d6b40d3.ctex"
+uid="uid://douf5te0iv1w6"
+path="res://.godot/imported/Seamless-Road-Texture1.jpg-6098268b22de6dcdc389072af9796558.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/trash_collection/paper_wad.png"
-dest_files=["res://.godot/imported/paper_wad.png-41cdf290a0b1bbbd1bf55f998d6b40d3.ctex"]
+source_file="res://Trash Collection/images/Seamless-Road-Texture1.jpg"
+dest_files=["res://.godot/imported/Seamless-Road-Texture1.jpg-6098268b22de6dcdc389072af9796558.ctex"]
 
 [params]
 

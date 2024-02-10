@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://douf5te0iv1w6"
-path="res://.godot/imported/Seamless-Road-Texture1.jpg-2f535b8dbf90e9be39e2a53e3ec77a62.ctex"
+uid="uid://cdanaxbnknpkp"
+path="res://.godot/imported/car_top_emissions.svg-ee19d73251a7fcd46d4dd8b219e5613c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/trash_collection/Seamless-Road-Texture1.jpg"
-dest_files=["res://.godot/imported/Seamless-Road-Texture1.jpg-2f535b8dbf90e9be39e2a53e3ec77a62.ctex"]
+source_file="res://emissions_data/emissions_game_images/car_top_emissions.svg"
+dest_files=["res://.godot/imported/car_top_emissions.svg-ee19d73251a7fcd46d4dd8b219e5613c.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

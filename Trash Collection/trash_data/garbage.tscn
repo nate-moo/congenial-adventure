@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2tfg76hhom3p"]
 
-[ext_resource type="Script" path="res://scripts/trash_collection/garbage.gd" id="1_4s5y0"]
-[ext_resource type="Texture2D" uid="uid://bkdrtnihees4t" path="res://images/trash_collection/bottle.png" id="1_v0cq0"]
-[ext_resource type="Texture2D" uid="uid://bq3ryf3wtrb7v" path="res://images/trash_collection/paper_wad.png" id="2_n8blt"]
+[ext_resource type="Script" path="res://Trash Collection/trash_collection/garbage.gd" id="1_a0tu8"]
+[ext_resource type="Texture2D" uid="uid://bkdrtnihees4t" path="res://Trash Collection/images/bottle.png" id="1_v0cq0"]
+[ext_resource type="Texture2D" uid="uid://bq3ryf3wtrb7v" path="res://Trash Collection/images/paper_wad.png" id="2_n8blt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52ffo"]
 animations = [{
@@ -28,7 +28,7 @@ animations = [{
 [node name="trash-pieces" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_4s5y0")
+script = ExtResource("1_a0tu8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(21, -985)

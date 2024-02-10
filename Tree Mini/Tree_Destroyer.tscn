@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Tree Mini/Sprite2D.gd" id="2_1xm2h"]
 [ext_resource type="Texture2D" uid="uid://crah2sfhuym8g" path="res://Tree Mini/Tree mini images/Bard_Generated_Image (1).jpg" id="3_tr2cm"]
 [ext_resource type="Texture2D" uid="uid://brsx7enll7piv" path="res://Tree Mini/Tree mini images/Untitled.png" id="4_jjrp1"]
-[ext_resource type="Script" path="res://Untitled.gd" id="5_ybth4"]
+[ext_resource type="Script" path="res://Tree Mini/Untitled.gd" id="5_ybth4"]
 [ext_resource type="Texture2D" uid="uid://d4grys6wacysm" path="res://Tree Mini/Tree mini images/Orange Tree.png" id="6_eifn6"]
 [ext_resource type="Texture2D" uid="uid://iisrr5arkp4k" path="res://Tree Mini/Tree mini images/Green tree.png" id="7_bm2he"]
 

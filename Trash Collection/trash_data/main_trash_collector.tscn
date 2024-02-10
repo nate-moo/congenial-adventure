@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://kj3k00tixkkm"]
 
-[ext_resource type="Script" path="res://Trash_Collector_Main.gd" id="1_kaip0"]
-[ext_resource type="PackedScene" uid="uid://b2tfg76hhom3p" path="res://trash_data/garbage.tscn" id="2_h6xrg"]
-[ext_resource type="PackedScene" uid="uid://cpjxv5cs7jhlo" path="res://trash_data/collector_character.tscn" id="3_2spql"]
+[ext_resource type="Script" path="res://Trash Collection/trash_data/Trash_Collector_Main.gd" id="1_kaip0"]
+[ext_resource type="PackedScene" uid="uid://b2tfg76hhom3p" path="res://Trash Collection/trash_data/garbage.tscn" id="2_h6xrg"]
+[ext_resource type="PackedScene" uid="uid://cpjxv5cs7jhlo" path="res://Trash Collection/trash_data/collector_character.tscn" id="3_2spql"]
 
 [sub_resource type="Curve2D" id="Curve2D_xaqdo"]
 _data = {
