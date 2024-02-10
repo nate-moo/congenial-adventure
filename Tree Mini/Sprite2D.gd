@@ -2,8 +2,6 @@ extends Sprite2D
 var speed = 400
 var angular_speed = PI
 
-#fun _ready():
-	#pass
 
 func _process(delta):
 	var direction = 0
