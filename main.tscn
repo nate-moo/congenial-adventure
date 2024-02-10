@@ -27,3 +27,5 @@ offset_right = 707.0
 offset_bottom = 516.0
 text = "Quit"
 script = ExtResource("2_pf8ge")
+
+[connection signal="pressed" from="Quit_Button" to="Quit_Button" method="_on_pressed"]
