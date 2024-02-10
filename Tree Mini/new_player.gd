@@ -3,10 +3,23 @@ signal hit
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var angular_speed = PI
+var screen_size_original
+var character_size
+@export var shape_scale_factor_x = 1.6
+@export var shape_scale_factor_y = 3.4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_viewport_rect().size
+	screen_size_original = get_viewport_rect().size
+	screen_size = screen_size_original
+	
+	# X scaling
+	character_size = $CollisionShape2D.shape.get_rect().size.x * shape_scale_factor_x
+	screen_size.x -= character_size
+	
+	# Y scaling
+	character_size = $CollisionShape2D.shape.get_rect().size.y * shape_scale_factor_y
+	screen_size.y -= character_size
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,9 +35,9 @@ func _process(delta):
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+		$CollisionShape2D/BlowtorchPlayer.play()
 	else:
-		$AnimatedSprite2D.stop()
+		$CollisionShape2D/BlowtorchPlayer.stop()
 	
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)

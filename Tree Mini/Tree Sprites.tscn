@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbp7mkbqbl0d4"]
+[gd_scene load_steps=11 format=3 uid="uid://dt00jljl1sjle"]
 
-[ext_resource type="Script" path="res://Tree Mini/Orange Tree Sprite.gd" id="1_b0mwl"]
+[ext_resource type="Script" path="res://Tree Mini/Tree_Sprites.gd" id="1_eg3e0"]
 [ext_resource type="Texture2D" uid="uid://chtbd4y6k3g8e" path="res://Tree Mini/Img Trees/Green tree.png" id="2_34mc3"]
 [ext_resource type="Texture2D" uid="uid://bqhqa0a3lf285" path="res://Tree Mini/Img Trees/G Fire 1.png" id="3_s1tpk"]
 [ext_resource type="Texture2D" uid="uid://1ynw01byhjtm" path="res://Tree Mini/Img Trees/G Fire 2.png" id="4_uwpya"]
@@ -48,10 +48,13 @@ animations = [{
 }]
 
 [node name="TreeSprite" type="Node2D"]
-script = ExtResource("1_b0mwl")
+script = ExtResource("1_eg3e0")
 
-[node name="Tree Burning" type="AnimatedSprite2D" parent="."]
-position = Vector2(398, 219)
+[node name="TreeBurning" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, 3.8147e-06)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6r1s6")
-animation = &"Orange Burn"
+animation = &"Green Burn"
+
+[connection signal="animation_finished" from="TreeBurning" to="." method="_on_tree_burning_animation_finished"]
+[connection signal="animation_looped" from="TreeBurning" to="." method="_on_tree_burning_animation_looped"]

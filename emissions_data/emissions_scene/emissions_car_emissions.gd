@@ -25,6 +25,5 @@ func _on_child_entered_tree(node):
 
 
 func _on_area_entered(area):
-	#print("Collided")
 	area.visible = false
 	pass # Replace with function body.
