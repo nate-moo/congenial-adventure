@@ -1,5 +1,13 @@
 extends Area2D
-signal hit #defines signal called hit
+signal collect_trash #defines new signal 
+
+func start(pos):
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
+
+func _on_body_entered(body):
+	collect_trash.emit()
 
 @export var speed = 400
 var screen_size
@@ -28,3 +36,5 @@ func _process(delta):
 		
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO,screen_size)
+
+
