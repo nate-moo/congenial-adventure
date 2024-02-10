@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://Button.gd" id="1_o6opx"]
 
 [node name="Node2D" type="Node2D"]
+visible = false
+
+[node name="Character" type="Node2D" parent="."]
 
 [node name="Button" type="Button" parent="."]
 offset_left = 32.0
@@ -10,3 +13,11 @@ offset_top = 45.0
 offset_right = 128.0
 offset_bottom = 109.0
 script = ExtResource("1_o6opx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 366.967
+offset_top = 214.93
+offset_right = 406.967
+offset_bottom = 237.93
+text = "hello
+"
