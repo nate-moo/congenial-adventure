@@ -10,6 +10,7 @@ size = Vector2(46, 23)
 script = ExtResource("1_5de25")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_l2ut6")
 

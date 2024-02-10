@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://ckvi341222ctc"]
+[gd_scene load_steps=3 format=3 uid="uid://ckvi341222ctc"]
+
+[ext_resource type="Script" path="res://emissions_data/emissions_scene/ScoreCount.gd" id="1_xptpr"]
+[ext_resource type="Script" path="res://emissions_data/emissions_scene/Timer.gd" id="2_aht1i"]
 
 [node name="EmissionsUi" type="Control"]
 layout_mode = 3
@@ -25,6 +28,7 @@ offset_top = 18.0
 offset_right = 157.0
 offset_bottom = 41.0
 text = "0000"
+script = ExtResource("1_xptpr")
 
 [node name="TimerLabel" type="Label" parent="."]
 layout_mode = 0
@@ -43,3 +47,9 @@ offset_top = 18.0
 offset_right = 178.0
 offset_bottom = 41.0
 text = "0000"
+script = ExtResource("2_aht1i")
+
+[node name="Timer2" type="Timer" parent="TimerLabel"]
+wait_time = 60.0
+
+[connection signal="timeout" from="TimerLabel/Timer2" to="TimerLabel/Timer" method="_on_timer_2_timeout"]
