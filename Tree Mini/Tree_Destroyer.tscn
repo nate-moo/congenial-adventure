@@ -30,11 +30,11 @@ texture = ExtResource("4_jjrp1")
 script = ExtResource("5_ybth4")
 
 [node name="OrangeTree" type="Sprite2D" parent="."]
-position = Vector2(169.75, 211.691)
+position = Vector2(344, 616)
 scale = Vector2(0.427885, 0.427885)
 texture = ExtResource("6_eifn6")
 
 [node name="GreenTree" type="Sprite2D" parent="."]
-position = Vector2(725, 318)
+position = Vector2(646, 580)
 scale = Vector2(0.351277, 0.351277)
 texture = ExtResource("7_bm2he")

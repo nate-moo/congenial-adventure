@@ -1,10 +1,39 @@
-[gd_scene format=3 uid="uid://gk83cn5ss7d2"]
+[gd_scene load_steps=5 format=3 uid="uid://gk83cn5ss7d2"]
+
+[ext_resource type="Texture2D" uid="uid://iisrr5arkp4k" path="res://Tree Mini/Img Trees/Green tree.png" id="1_7bix8"]
+[ext_resource type="Texture2D" uid="uid://d4grys6wacysm" path="res://Tree Mini/Img Trees/Orange Tree.png" id="2_5qt27"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i84ao"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7bix8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0wjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5qt27")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tree" type="RigidBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animation Green" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i84ao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 metadata/_edit_group_ = true
+
+[node name="Animation Orange" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b0wjw")
