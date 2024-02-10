@@ -1,18 +1,21 @@
-extends Area2D
+extends Node2D
 
 @export var player_speed = 400
+@export var emit_time = 0.36
+@export var shape_scale_factor = 0.321
 var screen_size
 var screen_size_original
 var vehicle_size
-var emition
+var emission
+var delta_full = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	emition = preload("res://emissions_data/emissions_car_emissions.tscn")
+	emission = preload("res://emissions_data/emissions_car_emissions.tscn")
 	screen_size_original = get_viewport_rect().size
 	screen_size = screen_size_original
 	
-	vehicle_size = $CollisionShape2D.shape.get_rect().size.x
+	vehicle_size = $'CollisionShape2D'.shape.get_rect().size.y * shape_scale_factor
 	screen_size.x -= vehicle_size
 	pass # Replace with function body.
 
@@ -21,12 +24,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var velocity = Vector2.ZERO
+	delta_full += delta
 	if Input.is_action_pressed("car_left"):
 		velocity.x += -1
 	if Input.is_action_pressed("car_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("emit_fumes"):
-		get_parent().add_child(emition.instantiate())
+		if (delta_full > emit_time):
+			delta_full = 0
+			get_parent().add_child(emission.instantiate())
+			pass 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * player_speed
 	position += velocity * delta
