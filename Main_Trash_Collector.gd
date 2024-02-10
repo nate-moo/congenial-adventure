@@ -17,7 +17,7 @@ func _on_start_timer_timeout():
 func new_game():
 	score = 0
 	$Player_Collector.start($Start_Position.position)
-	$StartTimer.start()
+	$Start_Timer.start()
 
 func add_point():
 	score +=1
@@ -28,7 +28,7 @@ func _on_trash_timer_timeout():
 	
 	#random location on path2d
 	var trash_spawn_location = $Trash_Path/Trash_Spawn
-	trash_spawn_location.progress_ration = randf()
+	trash_spawn_location.progress_ratio = randf()
 	
 	#direction normal to path direction?
 	var direction = trash_spawn_location.rotation + PI/2
@@ -47,3 +47,7 @@ func _on_trash_timer_timeout():
 	#generate trash (no problemo)
 	add_child(trash)
 	
+
+
+func _on_score_timer_timeout():
+	pass # Replace with function body.
