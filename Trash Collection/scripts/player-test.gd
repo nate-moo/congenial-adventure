@@ -2,8 +2,8 @@ extends Area2D
 signal collect_trash #defines new signal 
 
 func start(pos):
-	position = pos
 	show()
+	position = pos
 	$CollisionShape2D.disabled = false
 
 func _on_body_entered(body):
@@ -15,7 +15,7 @@ var screen_size
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
-	hide() # check that there's a condition to reappear!
+	#hide()
 
 # $ is shorthand for get_node("item").action() at the 
 # relative current path
