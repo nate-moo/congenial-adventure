@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://di4nn04kfkffv"]
+
+[ext_resource type="Script" path="res://emissions_data/emissions_scene/emissions_bike.gd" id="1_ipd4k"]
+[ext_resource type="Texture2D" uid="uid://bqrta3ped8pvt" path="res://emissions_data/emissions_game_images/temporary_bike.png" id="1_muc5j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qocls"]
+size = Vector2(806.686, 510.484)
+
+[node name="EmissionsBike" type="Node2D"]
+script = ExtResource("1_ipd4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(110.62, 179.251)
+rotation = -1.57079
+scale = Vector2(0.448127, 0.448127)
+shape = SubResource("RectangleShape2D_qocls")
+
+[node name="TemporaryBike" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_muc5j")
