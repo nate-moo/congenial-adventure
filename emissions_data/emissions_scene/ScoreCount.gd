@@ -1,8 +1,10 @@
-extends Button
-
+extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#var emissionNode = %CollisionShape2D.get_parent()
+	#emissionNode.connect("score_up", _on_score_up)
+	
 	pass # Replace with function body.
 
 
@@ -10,6 +12,6 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_pressed():
-	get_tree().change_scene_to_file("res://Tree Mini/Main tree mini.tscn")
-	pass # Replace with function body.
+func _on_score_up():
+	print("Recieved score_up")
+	$'.'.text += 1

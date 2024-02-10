@@ -13,6 +13,6 @@ func _process(delta):
 	$".".position.y += 7.5
 	#print($".".position.y)
 	if ($".".position.y > 200):
-		$".".position.y = -250
+		$".".position.y = -230
 
 	pass
