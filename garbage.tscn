@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2tfg76hhom3p"]
 
-[ext_resource type="Texture2D" uid="uid://bkdrtnihees4t" path="res://images/bottle.png" id="1_v0cq0"]
+[ext_resource type="Texture2D" uid="uid://bkdrtnihees4t" path="res://images/trash_collection/bottle.png" id="1_v0cq0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52ffo"]
 animations = [{
