@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://rsp0uty1o307"]
+[gd_scene load_steps=5 format=3 uid="uid://rsp0uty1o307"]
 
-[ext_resource type="Script" path="res://scripts/minigames_scene/Back_Button.gd" id="1_3elw0"]
 [ext_resource type="Script" path="res://scripts/minigames_scene/Tree_Destroyer.gd" id="1_ihyh4"]
 [ext_resource type="Script" path="res://scripts/minigames_scene/Trash_Collector.gd" id="2_aqe2s"]
+[ext_resource type="Script" path="res://scripts/minigames_scene/Emissions.gd" id="3_kmfx0"]
+[ext_resource type="Script" path="res://scripts/minigames_scene/Back_Button.gd" id="3_w4sye"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Tree_Destroyer" type="Button" parent="."]
-offset_left = 475.0
+offset_left = 464.0
 offset_top = 40.0
-offset_right = 627.0
+offset_right = 616.0
 offset_bottom = 92.0
 text = "Tree Destroyer"
 script = ExtResource("1_ihyh4")
@@ -22,15 +23,24 @@ offset_bottom = 92.0
 text = "Trash Collector"
 script = ExtResource("2_aqe2s")
 
-[node name="Back_Button" type="Button" parent="."]
-offset_left = 55.0
+[node name="Emissions" type="Button" parent="."]
+offset_left = 669.0
 offset_top = 40.0
-offset_right = 207.0
+offset_right = 821.0
+offset_bottom = 92.0
+text = "Emissions"
+script = ExtResource("3_kmfx0")
+
+[node name="Back_Button" type="Button" parent="."]
+offset_left = 66.0
+offset_top = 40.0
+offset_right = 218.0
 offset_bottom = 92.0
 text = "Back
 "
-script = ExtResource("1_3elw0")
+script = ExtResource("3_w4sye")
 
 [connection signal="pressed" from="Tree_Destroyer" to="Tree_Destroyer" method="_on_pressed"]
 [connection signal="pressed" from="Trash_Collector" to="Trash_Collector" method="_on_pressed"]
+[connection signal="pressed" from="Emissions" to="Emissions" method="_on_pressed"]
 [connection signal="pressed" from="Back_Button" to="Back_Button" method="_on_pressed"]
