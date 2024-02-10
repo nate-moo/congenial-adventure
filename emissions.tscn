@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://daa7yf7iqad7g"]
+[gd_scene load_steps=3 format=3 uid="uid://daa7yf7iqad7g"]
+
+[ext_resource type="PackedScene" uid="uid://dahtspmp0tyj4" path="res://emissions_data/emissions_car_player.tscn" id="1_txvn2"]
 
 [sub_resource type="GDScript" id="GDScript_wa7rs"]
 script/source = "extends Button
@@ -27,5 +29,8 @@ offset_right = 43.0
 offset_bottom = 35.0
 text = "Quit"
 script = SubResource("GDScript_wa7rs")
+
+[node name="EmissionsCarPlayer" parent="." instance=ExtResource("1_txvn2")]
+position = Vector2(1, -1)
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
