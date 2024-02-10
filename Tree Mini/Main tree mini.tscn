@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxpa3yp480i8"]
+
+[ext_resource type="PackedScene" uid="uid://b42kwyk4cjbb2" path="res://Tree Mini/new_player.tscn" id="1_db0ps"]
+[ext_resource type="Script" path="res://Tree Mini/Main tree mini.gd" id="1_ednvm"]
+
+[node name="MainTreeMini" type="Node"]
+script = ExtResource("1_ednvm")
+
+[node name="NewPlayer" parent="." instance=ExtResource("1_db0ps")]
+
+[node name="Tree Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Start Position" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="Game Timer" type="Timer" parent="."]
