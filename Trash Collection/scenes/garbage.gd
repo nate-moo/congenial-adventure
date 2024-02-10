@@ -1,4 +1,5 @@
-extends RigidBody2D
+extends Area2D
+
 signal screen_exited
 signal collected
 
@@ -11,7 +12,7 @@ func _ready():
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
-func _on_body_entered(body):
+func _on_Garbage_body_entered(body):
 	hide()
 	collected.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
