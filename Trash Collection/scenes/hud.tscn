@@ -23,4 +23,10 @@ offset_bottom = 502.0
 theme_override_font_sizes/font_size = 21
 text = "Arrow Keys to move - catch as much trash as you can! "
 
-[node name="MessageTimer" type="Timer" parent="."]
+[node name="Countdown" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="TakeYerMarks" type="Timer" parent="."]
+
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
