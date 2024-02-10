@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpjxv5cs7jhlo"]
+[gd_scene load_steps=7 format=3 uid="uid://cpjxv5cs7jhlo"]
 
-[ext_resource type="Script" path="res://Trash Collection/trash_collection/player-test.gd" id="1_n1y6s"]
+[ext_resource type="Script" path="res://Trash Collection/scripts/player-test.gd" id="1_n1y6s"]
 [ext_resource type="Texture2D" uid="uid://d0ck0c8n6apat" path="res://Trash Collection/images/trash-1.png" id="1_owet7"]
 [ext_resource type="Texture2D" uid="uid://crg2jbphhrtjt" path="res://Trash Collection/images/trash-2.png" id="2_oy3ww"]
+[ext_resource type="Texture2D" uid="uid://dm7rmp3x8yk40" path="res://Trash Collection/images/idle-2.png" id="3_6syro"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_00n7q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_owet7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6syro")
 }],
 "loop": true,
 "name": &"TrashPlayer1",
@@ -30,11 +34,11 @@ size = Vector2(48, 62.544)
 script = ExtResource("1_n1y6s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 56.5)
-scale = Vector2(0.1, 0.09)
+scale = Vector2(0.375, 0.375)
 sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"TrashPlayer1"
-frame_progress = 0.306806
+frame = 1
+frame_progress = 0.858939
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 52)
