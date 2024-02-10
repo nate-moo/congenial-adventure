@@ -37,10 +37,12 @@ position = Vector2(0, 56.5)
 scale = Vector2(0.1, 0.09)
 sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"TrashPlayer1"
-frame_progress = 0.449797
+frame_progress = 0.401656
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player-test"]
 position = Vector2(4.49998, 9.99999)
 scale = Vector2(1, 0.89537)
 shape = SubResource("RectangleShape2D_5p5os")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="player-test" to="player-test" method="_on_body_entered"]
