@@ -14,7 +14,7 @@ var screen_size
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	hide()
+	#hide()
 	screen_size = get_viewport_rect().size
 
 # $ is shorthand for get_node("item").action() at the 

@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://kj3k00tixkkm"]
+
+[ext_resource type="Script" path="res://Main_Trash_Collector.gd" id="1_lqa2y"]
+[ext_resource type="PackedScene" uid="uid://cpjxv5cs7jhlo" path="res://Trash_Collector.tscn" id="3_uqxg6"]
+
+[sub_resource type="Curve2D" id="Curve2D_xaqdo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, -7, 0, 0, 0, 0, 1153, 2, 0, 0, 0, 0, 1150, 647, 0, 0, 0, 0, -4, 643, 0, 0, 0, 0, -2, -7)
+}
+point_count = 5
+
+[node name="Main_Trash_Collector" type="Node"]
+script = ExtResource("1_lqa2y")
+
+[node name="Start_Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Score_Timer" type="Timer" parent="."]
+
+[node name="Trash_Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Start_Position" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="Trash_Path" type="Path2D" parent="."]
+curve = SubResource("Curve2D_xaqdo")
+
+[node name="Trash_Spawn" type="PathFollow2D" parent="Trash_Path"]
+position = Vector2(-2, -7)
+rotation = 0.00779205
+
+[node name="Player_Collector" parent="." instance=ExtResource("3_uqxg6")]

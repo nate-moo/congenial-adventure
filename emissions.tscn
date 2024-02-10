@@ -31,6 +31,6 @@ text = "Quit"
 script = SubResource("GDScript_wa7rs")
 
 [node name="EmissionsCarPlayer" parent="." instance=ExtResource("1_txvn2")]
-position = Vector2(1, -1)
+position = Vector2(456, 111)
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
