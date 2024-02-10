@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://daa7yf7iqad7g"]
+[gd_scene load_steps=9 format=3 uid="uid://daa7yf7iqad7g"]
 
 [ext_resource type="Texture2D" uid="uid://bn4rcvl8ecpr" path="res://emissions_data/emissions_game_images/Seamless-Road-Texture1.jpg" id="1_vffgv"]
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/road_scroll.gd" id="2_4e2lh"]
+[ext_resource type="Texture2D" uid="uid://xwrqhgjgdcqx" path="res://emissions_data/emissions_game_images/grazz.png" id="3_k4jkp"]
 [ext_resource type="PackedScene" uid="uid://m8ge06w6rcfs" path="res://emissions_data/Emissions_car_player_scene2D.tscn" id="4_2dswx"]
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/BikeSpawnArea.gd" id="4_rexjc"]
+[ext_resource type="PackedScene" uid="uid://ckvi341222ctc" path="res://emissions_data/Emissions_UI.tscn" id="5_6rksm"]
 
 [sub_resource type="GDScript" id="GDScript_wa7rs"]
 script/source = "extends Button
@@ -36,6 +38,28 @@ offset_bottom = 35.0
 text = "Quit"
 script = SubResource("GDScript_wa7rs")
 
+[node name="Grazz" type="Sprite2D" parent="."]
+position = Vector2(893, -132)
+rotation = -3.14159
+scale = Vector2(0.619526, 0.619526)
+texture = ExtResource("3_k4jkp")
+script = ExtResource("2_4e2lh")
+
+[node name="Grazz" type="Sprite2D" parent="Grazz"]
+position = Vector2(-3.49374, -1098.96)
+scale = Vector2(1.00638, 1.00638)
+texture = ExtResource("3_k4jkp")
+
+[node name="Grazz2" type="Sprite2D" parent="Grazz"]
+position = Vector2(1098.42, -1101.65)
+scale = Vector2(1.00638, 1.00638)
+texture = ExtResource("3_k4jkp")
+
+[node name="Grazz3" type="Sprite2D" parent="Grazz"]
+position = Vector2(1098.42, -2.42126)
+scale = Vector2(1.00638, 1.00638)
+texture = ExtResource("3_k4jkp")
+
 [node name="Seamless-road-texture1" type="Sprite2D" parent="."]
 visibility_layer = 512
 position = Vector2(563, -277)
@@ -46,16 +70,18 @@ script = ExtResource("2_4e2lh")
 position = Vector2(0, 302)
 texture = ExtResource("1_vffgv")
 
+[node name="Seamless-road-texture1" type="Sprite2D" parent="Seamless-road-texture1/Seamless-road-texture2"]
+position = Vector2(1, 152)
+texture = ExtResource("1_vffgv")
+
 [node name="Seamless-road-texture3" type="Sprite2D" parent="Seamless-road-texture1/Seamless-road-texture2"]
 position = Vector2(1, 454)
 texture = ExtResource("1_vffgv")
 
-[node name="Seamless-road-texture1" type="Sprite2D" parent="Seamless-road-texture1/Seamless-road-texture2/Seamless-road-texture3"]
-position = Vector2(0, -302)
-texture = ExtResource("1_vffgv")
-
 [node name="EmissionsCarPlayerScene2d" parent="." instance=ExtResource("4_2dswx")]
-position = Vector2(481, 36)
+position = Vector2(481, 59)
+
+[node name="EmissionsUi" parent="." instance=ExtResource("5_6rksm")]
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(291, 573)

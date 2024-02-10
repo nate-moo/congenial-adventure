@@ -18,12 +18,12 @@ func _process(delta):
 
 
 func _on_child_entered_tree(node):
-	node.position.x = node.get_parent().get_parent().get_child(2).position.x + emission_x_pos
+	node.position.x = node.get_parent().get_parent().get_child(3).position.x + emission_x_pos
 	node.position.y = emission_y_pos
 
 	pass # Replace with function body.
 
 
 func _on_area_entered(area):
-	area.visible = false
+	area.queue_free()
 	pass # Replace with function body.
