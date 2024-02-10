@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brsx7enll7piv"
-path="res://.godot/imported/Untitled.png-55131cef2d7bea60aa0ddad0215fae8e.ctex"
+uid="uid://bpkg23fns4ykj"
+path="res://.godot/imported/Little Flame.png-febfe3b45dceaaf034619de63d3529ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tree Mini/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-55131cef2d7bea60aa0ddad0215fae8e.ctex"]
+source_file="res://Tree Mini/Tree mini images/Little Flame.png"
+dest_files=["res://.godot/imported/Little Flame.png-febfe3b45dceaaf034619de63d3529ef.ctex"]
 
 [params]
 

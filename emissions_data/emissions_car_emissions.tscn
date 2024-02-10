@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://2xhyls0yg6o1"]
+[gd_scene load_steps=4 format=3 uid="uid://2xhyls0yg6o1"]
 
+[ext_resource type="Script" path="res://scripts/emissions_scene/emissions_car_emissions.gd" id="1_5de25"]
 [ext_resource type="Texture2D" uid="uid://kg5c776t7qpi" path="res://images/emissions_game_images/cloud.svg" id="1_qwuoo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ut6"]
+size = Vector2(114, 77)
+
 [node name="EmissionsCarEmissions" type="Area2D"]
+script = ExtResource("1_5de25")
 
 [node name="Cloud" type="Sprite2D" parent="."]
 position = Vector2(1, 2)
 texture = ExtResource("1_qwuoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_l2ut6")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
