@@ -34,10 +34,10 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player-test"]
 position = Vector2(0, 56.5)
-scale = Vector2(1, 0.89537)
+scale = Vector2(0.1, 0.09)
 sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"TrashPlayer1"
-frame_progress = 0.0165432
+frame_progress = 0.449797
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player-test"]
 position = Vector2(4.49998, 9.99999)
