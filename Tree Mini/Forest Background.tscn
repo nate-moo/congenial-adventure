@@ -5,6 +5,6 @@
 [node name="ForestBackground" type="Node2D"]
 
 [node name="BardGeneratedImage(1)" type="Sprite2D" parent="."]
-position = Vector2(582, 397)
-scale = Vector2(0.753255, 0.513672)
+position = Vector2(578.75, 327.25)
+scale = Vector2(0.749023, 0.422852)
 texture = ExtResource("1_o1cx5")

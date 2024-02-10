@@ -36,18 +36,20 @@ position = Vector2(1085, -246)
 script = ExtResource("1_e5dom")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-139, 479)
+position = Vector2(-250, 524)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_yacr0")
 animation = &"up"
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-140, 521)
+position = Vector2(-252, 567)
 shape = SubResource("RectangleShape2D_qyv8h")
+metadata/_edit_group_ = true
 
 [node name="BlowTorch" type="Sprite2D" parent="."]
-position = Vector2(-539.5, 539.5)
-scale = Vector2(0.297526, 0.297526)
+position = Vector2(-290, 535)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("5_n0lwe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
