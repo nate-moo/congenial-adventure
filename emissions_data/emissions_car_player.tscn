@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dahtspmp0tyj4"]
+
+[ext_resource type="Script" path="res://scripts/emissions_scene/emissions_car_player.gd" id="1_v5hhj"]
+[ext_resource type="Texture2D" uid="uid://cdanaxbnknpkp" path="res://images/emissions_game_images/car_top_emissions.svg" id="1_wcp3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q28a7"]
+size = Vector2(168, 372)
+
+[node name="EmissionsCarPlayer" type="Area2D"]
+script = ExtResource("1_v5hhj")
+
+[node name="CarTopEmissions" type="Sprite2D" parent="."]
+position = Vector2(562, 231)
+rotation = -1.5708
+scale = Vector2(0.374715, 0.343401)
+texture = ExtResource("1_wcp3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(564, 231)
+shape = SubResource("RectangleShape2D_q28a7")

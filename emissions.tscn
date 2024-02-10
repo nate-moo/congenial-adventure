@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://daa7yf7iqad7g"]
+
+[ext_resource type="PackedScene" uid="uid://dahtspmp0tyj4" path="res://emissions_data/emissions_car_player.tscn" id="1_txvn2"]
+
+[sub_resource type="GDScript" id="GDScript_wa7rs"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_pressed():
+	get_tree().change_scene_to_file(\"res://minigames_scene.tscn\")
+	pass # Replace with function body.
+"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 43.0
+offset_bottom = 35.0
+text = "Quit"
+script = SubResource("GDScript_wa7rs")
+
+[node name="EmissionsCarPlayer" parent="." instance=ExtResource("1_txvn2")]
+position = Vector2(1, -1)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpjxv5cs7jhlo"]
+
+[ext_resource type="Script" path="res://scripts/minigames_scene/trash_collection/player-test.gd" id="1_n1y6s"]
+[ext_resource type="Texture2D" uid="uid://d0ck0c8n6apat" path="res://images/trash_collection/trash-1.png" id="1_owet7"]
+[ext_resource type="Texture2D" uid="uid://crg2jbphhrtjt" path="res://images/trash_collection/trash-2.png" id="2_oy3ww"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00n7q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_owet7")
+}],
+"loop": true,
+"name": &"TrashPlayer1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oy3ww")
+}],
+"loop": true,
+"name": &"TrashPlayer2",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p5os"]
+size = Vector2(511, 638.842)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player-test" type="Area2D" parent="."]
+script = ExtResource("1_n1y6s")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player-test"]
+position = Vector2(0, 56.5)
+scale = Vector2(0.1, 0.09)
+sprite_frames = SubResource("SpriteFrames_00n7q")
+animation = &"TrashPlayer1"
+frame_progress = 0.306806
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player-test"]
+position = Vector2(4.49998, 9.99999)
+scale = Vector2(1, 0.89537)
+shape = SubResource("RectangleShape2D_5p5os")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="player-test" to="player-test" method="_on_body_entered"]
