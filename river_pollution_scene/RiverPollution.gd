@@ -1,20 +1,11 @@
-extends CharacterBody2D
+extends Node2D
+func _main():
+	set_camera_limits()
+func set_camera_limits():
+	var map_limits = $TileMap.get_used_rect()
+	var map_cellsize = $TileMap.cell_size
+	$Player/Camera2D.limit_left = map_limits.position.x * map_cellsize.x
+	$Player/Camera2D.limit_right = map_limits.end.x * map_cellsize.x
+	$Player/Camera2D.limit_top = map_limits.position.y * map_cellsize.y
+	$Player/Camera2D.limit_bottom = map_limits.end.y * map_cellsize.y
 
-var speed = 400
-var angular_speed = PI
-func _init():
-	print("this suck buns")
-
-func _process(delta):
-	#rotation += angular_speed * delta
-
-	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("ui_right"):
-	#position += velocity * delta
-		velocity.x += 1.0
-	if Input.is_action_pressed("ui_left"):
-	#position += velocity * delta
-		velocity.x -= 1.0
-		
-	move_and_collide(Vector2(0, 1))
-	
