@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://rsp0uty1o307"]
 
-[ext_resource type="Script" path="res://Back_Button.gd" id="1_3elw0"]
-[ext_resource type="Script" path="res://Tree_Destroyer.gd" id="1_h4bv5"]
-[ext_resource type="Script" path="res://Trash_Collector.gd" id="2_o52ui"]
+[ext_resource type="Script" path="res://scripts/minigames_scene/Back_Button.gd" id="1_3elw0"]
+[ext_resource type="Script" path="res://scripts/minigames_scene/Tree_Destroyer.gd" id="1_ihyh4"]
+[ext_resource type="Script" path="res://scripts/minigames_scene/Trash_Collector.gd" id="2_aqe2s"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,7 +12,7 @@ offset_top = 40.0
 offset_right = 627.0
 offset_bottom = 92.0
 text = "Tree Destroyer"
-script = ExtResource("1_h4bv5")
+script = ExtResource("1_ihyh4")
 
 [node name="Trash_Collector" type="Button" parent="."]
 offset_left = 264.0
@@ -20,7 +20,7 @@ offset_top = 40.0
 offset_right = 416.0
 offset_bottom = 92.0
 text = "Trash Collector"
-script = ExtResource("2_o52ui")
+script = ExtResource("2_aqe2s")
 
 [node name="Back_Button" type="Button" parent="."]
 offset_left = 55.0
