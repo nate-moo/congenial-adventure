@@ -50,7 +50,7 @@ func _on_trash_timer_timeout():
 	
 	#velpcity go whoo
 	var velocity = Vector2(randf_range(125.0, 175.0), 0.0)
-	trash.linear_velocity = velocity.rotated(direction)
+	# velocity = velocity.normalized() # * speed (former modifier for player)
 	
 	#generate trash (no problemo)
 	add_child(trash)
