@@ -6,7 +6,6 @@ var rand_num
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#rng.randomize()
 	var tree_types = $TreeBurning.sprite_frames.get_animation_names()
 	$TreeBurning.play(tree_types[randi() % tree_types.size()])
 

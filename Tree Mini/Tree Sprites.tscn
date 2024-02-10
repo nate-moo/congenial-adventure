@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt00jljl1sjle"]
+[gd_scene load_steps=11 format=3 uid="uid://bbp7mkbqbl0d4"]
 
 [ext_resource type="Script" path="res://Tree Mini/Tree_Sprites.gd" id="1_eg3e0"]
 [ext_resource type="Texture2D" uid="uid://chtbd4y6k3g8e" path="res://Tree Mini/Img Trees/Green tree.png" id="2_34mc3"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://8no71mh5t1mf"]
+[gd_scene load_steps=6 format=3 uid="uid://cxpa3yp480i8"]
 
 [ext_resource type="PackedScene" uid="uid://b42kwyk4cjbb2" path="res://Tree Mini/new_player.tscn" id="1_db0ps"]
 [ext_resource type="Script" path="res://Tree Mini/Main tree mini.gd" id="1_ednvm"]
 [ext_resource type="Script" path="res://Tree Mini/TreeSpawnZone.gd" id="3_v1o6r"]
+[ext_resource type="Texture2D" uid="uid://crah2sfhuym8g" path="res://Tree Mini/Img Trees/Bard_Generated_Image (1).jpg" id="4_7ak8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5luxe"]
 size = Vector2(1152, 648.5)
@@ -10,9 +11,23 @@ size = Vector2(1152, 648.5)
 [node name="MainTreeMini" type="Node"]
 script = ExtResource("1_ednvm")
 
+[node name="Forest Floor" type="Sprite2D" parent="."]
+visibility_layer = 524800
+position = Vector2(588.75, 398)
+scale = Vector2(0.773763, 0.514323)
+texture = ExtResource("4_7ak8a")
+
 [node name="Tree Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 16384
+
+[node name="TreeSpawnZone" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(577, 322.75)
+shape = SubResource("RectangleShape2D_5luxe")
+script = ExtResource("3_v1o6r")
 
 [node name="Start Position" type="Marker2D" parent="."]
 position = Vector2(240, 450)
@@ -20,11 +35,6 @@ position = Vector2(240, 450)
 [node name="Game Timer" type="Timer" parent="."]
 
 [node name="NewPlayer" parent="." instance=ExtResource("1_db0ps")]
+show_behind_parent = true
+top_level = true
 position = Vector2(917, 248)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="TreeSpawnZone" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(577, 322.75)
-shape = SubResource("RectangleShape2D_5luxe")
-script = ExtResource("3_v1o6r")
