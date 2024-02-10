@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://geib5jemc8y0"]
+
+[ext_resource type="Texture2D" uid="uid://dg0uqtu7ps1qa" path="res://icon.svg" id="1_ph6d8"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="2_1xm2h"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 584.0
+offset_top = 194.0
+offset_right = 624.0
+offset_bottom = 217.0
+text = "Hello"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(313, 181)
+texture = ExtResource("1_ph6d8")
+script = ExtResource("2_1xm2h")
