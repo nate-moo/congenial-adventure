@@ -58,6 +58,11 @@ tree_player_back={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Top"
+2d_render/layer_10="Background"
+
 [rendering]
 
 renderer/rendering_method="mobile"
