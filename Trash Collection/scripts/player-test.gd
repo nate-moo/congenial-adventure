@@ -9,7 +9,7 @@ func start(pos):
 func _on_body_entered(body):
 	collect_trash.emit()
 
-@export var speed = 500 # pixels/sec
+@export var speed = 1000 # pixels/sec
 var screen_size 
 
 # Called when the node enters the scene tree for the first time.

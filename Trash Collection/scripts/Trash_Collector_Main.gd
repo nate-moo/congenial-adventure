@@ -49,7 +49,7 @@ func _on_trash_timer_timeout():
 	trash.rotation = direction
 	
 	#velpcity go whoo
-	var velocity = Vector2(randf_range(150.0, 200.0), 0.0)
+	var velocity = Vector2(randf_range(125.0, 175.0), 0.0)
 	trash.linear_velocity = velocity.rotated(direction)
 	
 	#generate trash (no problemo)
