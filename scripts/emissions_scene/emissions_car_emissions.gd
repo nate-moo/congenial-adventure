@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_child_entered_tree(node):
-	$'.'.position = get_parent().get_child(0).position
+	$'.'.position = %Tailpipe.position
 	pass # Replace with function body.
