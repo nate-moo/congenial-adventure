@@ -20,8 +20,5 @@ func _process(delta):
 func _on_child_entered_tree(node):
 	node.position.x = node.get_parent().get_parent().get_child(2).position.x + emission_x_pos
 	node.position.y = emission_y_pos
-	print(node.get_parent().get_parent().get_child(2).position)
-	#cloud_pos = %Cloud_Anchor
-	#$'.'.position = %Cloud_Anchor.get_rect().position
-	#print()
+
 	pass # Replace with function body.
