@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpjxv5cs7jhlo"]
+[gd_scene load_steps=6 format=3 uid="uid://cpjxv5cs7jhlo"]
 
-[ext_resource type="Texture2D" uid="uid://blu1cnsof4o7" path="res://images/trash-1.png" id="1_owet7"]
+[ext_resource type="Script" path="res://player-test.gd" id="1_n1y6s"]
+[ext_resource type="Texture2D" uid="uid://d0ck0c8n6apat" path="res://images/trash-1.png" id="1_owet7"]
 [ext_resource type="Texture2D" uid="uid://crg2jbphhrtjt" path="res://images/trash-2.png" id="2_oy3ww"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_00n7q"]
@@ -28,6 +29,7 @@ size = Vector2(511, 638.842)
 [node name="Node2D" type="Node2D"]
 
 [node name="player-test" type="Area2D" parent="."]
+script = ExtResource("1_n1y6s")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player-test"]
@@ -35,7 +37,7 @@ position = Vector2(0, 56.5)
 scale = Vector2(1, 0.89537)
 sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"TrashPlayer1"
-frame_progress = 0.725516
+frame_progress = 0.0165432
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player-test"]
 position = Vector2(4.49998, 9.99999)
