@@ -5,6 +5,7 @@ var self_pos
 @export var emission_y_pos = 330
 @export var emission_x_pos = 40
 @export var car_speed = 7.5
+
 signal score_up
 
 # Called when the node enters the scene tree for the first time.

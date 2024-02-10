@@ -6,8 +6,9 @@
 [ext_resource type="Script" path="res://river_pollution_scene/floor.gd" id="4_f5mhu"]
 [ext_resource type="Texture2D" uid="uid://ced68qc3ixn52" path="res://river_pollution_scene/riverpollution_images/moving_platform.png" id="4_k42vx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3ops"]
-size = Vector2(1189.75, 42)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s05my"]
+radius = 37.0
+height = 1288.0
 
 [node name="RiverView" type="Node2D"]
 script = ExtResource("1_rheub")
@@ -20,10 +21,10 @@ scale = Vector2(1.59333, 1.6)
 texture = ExtResource("1_bcr05")
 
 [node name="Playa" parent="." instance=ExtResource("1_y7jko")]
-position = Vector2(-512, 2)
+position = Vector2(0, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Playa"]
-position = Vector2(378, -19)
+position = Vector2(1, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = ExtResource("4_f5mhu")
@@ -34,5 +35,7 @@ scale = Vector2(1.59333, 1)
 texture = ExtResource("4_k42vx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(5.125, 237)
-shape = SubResource("RectangleShape2D_a3ops")
+position = Vector2(0, 247)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_s05my")
+one_way_collision_margin = 20.0

@@ -2,7 +2,7 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#var emissionNode = %CollisionShape2D.get_parent()
+	var emissionNode = get_tree().get_root().get_parent()
 	#emissionNode.connect("score_up", _on_score_up)
 	
 	pass # Replace with function body.

@@ -1,6 +1,8 @@
 extends Node2D
+
 func _main():
 	set_camera_limits()
+	
 func set_camera_limits():
 	var map_limits = $TileMap.get_used_rect()
 	var map_cellsize = $TileMap.cell_size
