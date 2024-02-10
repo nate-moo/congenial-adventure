@@ -10,11 +10,11 @@ size = Vector2(168, 372)
 script = ExtResource("1_v5hhj")
 
 [node name="CarTopEmissions" type="Sprite2D" parent="."]
-position = Vector2(562, 231)
+position = Vector2(82.7295, 185.863)
 rotation = -1.5708
 scale = Vector2(0.374715, 0.343401)
 texture = ExtResource("1_wcp3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(564, 231)
+position = Vector2(84.7294, 185.863)
 shape = SubResource("RectangleShape2D_q28a7")
