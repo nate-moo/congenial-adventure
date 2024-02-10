@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://lfgu1clipngp"]
+[gd_scene load_steps=2 format=3 uid="uid://lfgu1clipngp"]
+
+[ext_resource type="Texture2D" uid="uid://crah2sfhuym8g" path="res://Tree Mini/Img Trees/Bard_Generated_Image (1).jpg" id="1_o1cx5"]
 
 [node name="ForestBackground" type="Node2D"]
+
+[node name="BardGeneratedImage(1)" type="Sprite2D" parent="."]
+position = Vector2(582, 397)
+scale = Vector2(0.753255, 0.513672)
+texture = ExtResource("1_o1cx5")
