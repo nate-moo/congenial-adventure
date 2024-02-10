@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4grys6wacysm"
-path="res://.godot/imported/Orange Tree.png-0320528703a60a9003a3324573e1420a.ctex"
+uid="uid://gr7yuuxq4dtq"
+path="res://.godot/imported/Player lift right leg.png-66f8958187d9ec1cc69c40878151e5fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tree Mini/Tree mini images/Orange Tree.png"
-dest_files=["res://.godot/imported/Orange Tree.png-0320528703a60a9003a3324573e1420a.ctex"]
+source_file="res://Tree Mini/Img Trees/Player lift right leg.png"
+dest_files=["res://.godot/imported/Player lift right leg.png-66f8958187d9ec1cc69c40878151e5fa.ctex"]
 
 [params]
 

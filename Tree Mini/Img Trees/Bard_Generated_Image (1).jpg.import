@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crah2sfhuym8g"
-path="res://.godot/imported/Bard_Generated_Image (1).jpg-028aec632826e783b8fb146a54a4bb3b.ctex"
+path="res://.godot/imported/Bard_Generated_Image (1).jpg-7b8efeb0587949959b5c7170b3147a86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tree Mini/Tree mini images/Bard_Generated_Image (1).jpg"
-dest_files=["res://.godot/imported/Bard_Generated_Image (1).jpg-028aec632826e783b8fb146a54a4bb3b.ctex"]
+source_file="res://Tree Mini/Img Trees/Bard_Generated_Image (1).jpg"
+dest_files=["res://.godot/imported/Bard_Generated_Image (1).jpg-7b8efeb0587949959b5c7170b3147a86.ctex"]
 
 [params]
 
