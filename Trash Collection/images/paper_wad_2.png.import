@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://8df2wn45m188"
+path="res://.godot/imported/paper_wad_2.png-9de58df6bcc5a10c7d46854313680fbb.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Trash Collection/images/paper_wad_2.png"
+dest_files=["res://.godot/imported/paper_wad_2.png-9de58df6bcc5a10c7d46854313680fbb.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

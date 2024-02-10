@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2tfg76hhom3p"]
+[gd_scene load_steps=7 format=3 uid="uid://b2tfg76hhom3p"]
 
 [ext_resource type="Script" path="res://Trash Collection/scripts/garbage.gd" id="1_a0tu8"]
 [ext_resource type="Texture2D" uid="uid://bkdrtnihees4t" path="res://Trash Collection/images/bottle.png" id="1_v0cq0"]
 [ext_resource type="Texture2D" uid="uid://bq3ryf3wtrb7v" path="res://Trash Collection/images/paper_wad.png" id="2_n8blt"]
+[ext_resource type="Texture2D" uid="uid://8df2wn45m188" path="res://Trash Collection/images/paper_wad_2.png" id="4_440sj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52ffo"]
 animations = [{
@@ -17,18 +18,23 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_n8blt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_440sj")
 }],
 "loop": true,
 "name": &"paper_wad",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_11n2c"]
 
 [node name="trash-pieces" type="RigidBody2D"]
+position = Vector2(10, 10)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_a0tu8")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(21, -985)

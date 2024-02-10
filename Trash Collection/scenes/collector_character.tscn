@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpjxv5cs7jhlo"]
 
 [ext_resource type="Script" path="res://Trash Collection/scripts/player-test.gd" id="1_n1y6s"]
-[ext_resource type="Texture2D" uid="uid://d0ck0c8n6apat" path="res://Trash Collection/images/trash-1.png" id="1_owet7"]
+[ext_resource type="Texture2D" uid="uid://detx6mxowall0" path="res://Trash Collection/images/idle-1.png" id="2_dpf5h"]
 [ext_resource type="Texture2D" uid="uid://crg2jbphhrtjt" path="res://Trash Collection/images/trash-2.png" id="2_oy3ww"]
 [ext_resource type="Texture2D" uid="uid://dm7rmp3x8yk40" path="res://Trash Collection/images/idle-2.png" id="3_6syro"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_owet7")
+"texture": ExtResource("2_dpf5h")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_6syro")
@@ -27,23 +27,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p5os"]
-size = Vector2(48, 62.544)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrome"]
+size = Vector2(118, 157.477)
 
 [node name="Player_Collector" type="Area2D"]
 script = ExtResource("1_n1y6s")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(216, 550)
 scale = Vector2(0.375, 0.375)
 sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"TrashPlayer1"
-frame = 1
 frame_progress = 0.858939
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 52)
+position = Vector2(216, 549.5)
 scale = Vector2(1, 0.89537)
-shape = SubResource("RectangleShape2D_5p5os")
+shape = SubResource("RectangleShape2D_jrome")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
