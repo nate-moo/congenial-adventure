@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://kj3k00tixkkm"]
+[gd_scene load_steps=6 format=3 uid="uid://kj3k00tixkkm"]
 
 [ext_resource type="Script" path="res://Trash Collection/scripts/Trash_Collector_Main.gd" id="1_jp1ol"]
 [ext_resource type="PackedScene" uid="uid://b2tfg76hhom3p" path="res://Trash Collection/scenes/garbage.tscn" id="2_22ey6"]
 [ext_resource type="PackedScene" uid="uid://cpjxv5cs7jhlo" path="res://Trash Collection/scenes/collector_character.tscn" id="3_kcwbf"]
+[ext_resource type="PackedScene" uid="uid://cneyujbr88ufk" path="res://Trash Collection/scenes/hud.tscn" id="4_1odo4"]
 
 [sub_resource type="Curve2D" id="Curve2D_vtkkn"]
 _data = {
@@ -14,13 +15,16 @@ point_count = 2
 script = ExtResource("1_jp1ol")
 trash_scene = ExtResource("2_22ey6")
 
-[node name="Start_Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
+[node name="Player_Collector" parent="." instance=ExtResource("3_kcwbf")]
+position = Vector2(8, 0)
+
+[node name="Trash_Timer" type="Timer" parent="."]
 
 [node name="Score_Timer" type="Timer" parent="."]
 
-[node name="Trash_Timer" type="Timer" parent="."]
+[node name="Start_Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [node name="Start_Position" type="Marker2D" parent="."]
 position = Vector2(240, 450)
@@ -31,10 +35,10 @@ curve = SubResource("Curve2D_vtkkn")
 [node name="Trash_Spawn_Area" type="PathFollow2D" parent="Trash_Path"]
 position = Vector2(-8, 0)
 
-[node name="Player_Collector" parent="." instance=ExtResource("3_kcwbf")]
-position = Vector2(8, 0)
+[node name="HUD" parent="." instance=ExtResource("4_1odo4")]
 
-[connection signal="timeout" from="Start_Timer" to="." method="_on_start_timer_timeout"]
-[connection signal="timeout" from="Score_Timer" to="." method="_on_score_timer_timeout"]
-[connection signal="timeout" from="Trash_Timer" to="." method="_on_trash_timer_timeout"]
 [connection signal="collect_trash" from="Player_Collector" to="." method="_on_player_collector_collect_trash"]
+[connection signal="timeout" from="Trash_Timer" to="." method="_on_trash_timer_timeout"]
+[connection signal="timeout" from="Score_Timer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="Start_Timer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
