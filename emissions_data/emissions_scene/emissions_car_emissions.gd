@@ -1,5 +1,11 @@
 extends Area2D
 
+var cloud_pos
+var self_pos
+@export var emission_y_pos = 330
+@export var emission_x_pos = 40
+@export var car_speed = 7.5
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -7,10 +13,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$".".position.y += 7.5
+	$".".position.y += car_speed
 	pass
 
 
 func _on_child_entered_tree(node):
-	$'.'.position = %Tailpipe.position
+	node.position.x = node.get_parent().get_parent().get_child(2).position.x + emission_x_pos
+	node.position.y = emission_y_pos
+	print(node.get_parent().get_parent().get_child(2).position)
+	#cloud_pos = %Cloud_Anchor
+	#$'.'.position = %Cloud_Anchor.get_rect().position
+	#print()
 	pass # Replace with function body.
