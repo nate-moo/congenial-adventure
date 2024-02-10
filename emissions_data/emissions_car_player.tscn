@@ -18,3 +18,7 @@ texture = ExtResource("1_wcp3f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(84.7294, 185.863)
 shape = SubResource("RectangleShape2D_q28a7")
+
+[node name="Tailpipe" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(40, 355)
