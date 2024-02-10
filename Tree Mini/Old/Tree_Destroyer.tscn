@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://4hyw50yi0kav"]
+
+[ext_resource type="Texture2D" uid="uid://dg0uqtu7ps1qa" path="res://icon.svg" id="1_5prng"]
+[ext_resource type="Script" path="res://Tree Mini/Old/Sprite2D.gd" id="2_tsqmc"]
+[ext_resource type="Texture2D" uid="uid://crah2sfhuym8g" path="res://Tree Mini/Img Trees/Bard_Generated_Image (1).jpg" id="3_hqmfw"]
+[ext_resource type="Texture2D" uid="uid://brsx7enll7piv" path="res://Tree Mini/Img Trees/Player standing.png" id="4_w5sbh"]
+[ext_resource type="Script" path="res://Tree Mini/Old/Untitled.gd" id="5_k3uv4"]
+[ext_resource type="Texture2D" uid="uid://d4grys6wacysm" path="res://Tree Mini/Img Trees/Orange Tree.png" id="6_kdymb"]
+[ext_resource type="Texture2D" uid="uid://iisrr5arkp4k" path="res://Tree Mini/Img Trees/Green tree.png" id="7_iw4oc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Old Player" type="Sprite2D" parent="."]
+visible = false
+top_level = true
+position = Vector2(314, 181)
+texture = ExtResource("1_5prng")
+script = ExtResource("2_tsqmc")
+
+[node name="Ground" type="Sprite2D" parent="."]
+visibility_layer = 512
+position = Vector2(416, 421)
+scale = Vector2(0.55013, 0.55013)
+texture = ExtResource("3_hqmfw")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(555, 550)
+scale = Vector2(0.154923, 0.154923)
+texture = ExtResource("4_w5sbh")
+script = ExtResource("5_k3uv4")
+
+[node name="OrangeTree" type="Sprite2D" parent="."]
+position = Vector2(344, 616)
+scale = Vector2(0.427885, 0.427885)
+texture = ExtResource("6_kdymb")
+
+[node name="GreenTree" type="Sprite2D" parent="."]
+position = Vector2(646, 580)
+scale = Vector2(0.351277, 0.351277)
+texture = ExtResource("7_iw4oc")

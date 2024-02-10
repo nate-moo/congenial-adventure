@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://col36a0xrxaai"
-path="res://.godot/imported/Orange Tree.png-2037ab1b749e3dbb10e40ce30a006e16.ctex"
+uid="uid://dqvou04bf1opb"
+path="res://.godot/imported/Fire 3.png-659a61d86335a82ca73eff338bfebad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tree Mini/Img Trees/Orange Tree.png"
-dest_files=["res://.godot/imported/Orange Tree.png-2037ab1b749e3dbb10e40ce30a006e16.ctex"]
+source_file="res://Tree Mini/Img Trees/Fire 3.png"
+dest_files=["res://.godot/imported/Fire 3.png-659a61d86335a82ca73eff338bfebad8.ctex"]
 
 [params]
 
