@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dahtspmp0tyj4"]
+[gd_scene load_steps=5 format=3 uid="uid://dahtspmp0tyj4"]
 
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/emissions_car_player.gd" id="1_v5hhj"]
 [ext_resource type="Texture2D" uid="uid://cdanaxbnknpkp" path="res://emissions_data/emissions_game_images/car_top_emissions.svg" id="1_wcp3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q28a7"]
 size = Vector2(168, 372)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6pxg"]
 
 [node name="EmissionsCarPlayer" type="Area2D"]
 script = ExtResource("1_v5hhj")
@@ -22,3 +24,6 @@ shape = SubResource("RectangleShape2D_q28a7")
 [node name="Tailpipe" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(40, 355)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tailpipe"]
+shape = SubResource("CircleShape2D_r6pxg")

@@ -12,5 +12,5 @@ func _process(delta):
 
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://Trash_Collector.tscn")
+	get_tree().change_scene_to_file("res://Trash Collection/trash_data/main_trash_collector.tscn")
 	pass # Replace with function body.
