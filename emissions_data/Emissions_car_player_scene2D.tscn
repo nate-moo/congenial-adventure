@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://m8ge06w6rcfs"]
 
-[ext_resource type="Texture2D" uid="uid://cdanaxbnknpkp" path="res://emissions_data/emissions_game_images/car_top_emissions.svg" id="1_c6xlc"]
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/emissions_car_player.gd" id="1_xo6ii"]
+[ext_resource type="Texture2D" uid="uid://bqr7lemd0hco4" path="res://emissions_data/emissions_game_images/pixel_art_car_top_emissions_dark_shadow.png" id="2_7jlpx"]
 [ext_resource type="Texture2D" uid="uid://kg5c776t7qpi" path="res://emissions_data/emissions_game_images/cloud.svg" id="3_npvh8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2537d"]
@@ -20,10 +20,9 @@ scale = Vector2(0.321428, 0.321429)
 shape = SubResource("RectangleShape2D_2537d")
 
 [node name="CarTopEmissions" type="Sprite2D" parent="."]
-position = Vector2(78.6464, 156)
-rotation = -1.5708
-scale = Vector2(0.321428, 0.319943)
-texture = ExtResource("1_c6xlc")
+position = Vector2(79, 166)
+scale = Vector2(0.256971, 0.255784)
+texture = ExtResource("2_7jlpx")
 
 [node name="Tailpipe" type="CollisionShape2D" parent="."]
 position = Vector2(41.8174, 315)
