@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/trash_collection/garbage.gd" id="1_4s5y0"]
 [ext_resource type="Texture2D" uid="uid://bkdrtnihees4t" path="res://images/trash_collection/bottle.png" id="1_v0cq0"]
-[ext_resource type="Texture2D" uid="uid://cbxfosfel5kjj" path="res://images/trash_collection/paper_wad.png" id="2_n8blt"]
+[ext_resource type="Texture2D" uid="uid://bq3ryf3wtrb7v" path="res://images/trash_collection/paper_wad.png" id="2_n8blt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52ffo"]
 animations = [{
