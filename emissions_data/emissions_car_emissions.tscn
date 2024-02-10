@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://kg5c776t7qpi" path="res://emissions_data/emissions_game_images/cloud.svg" id="1_qwuoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2ut6"]
-size = Vector2(84, 47)
+size = Vector2(62, 31)
 
 [node name="EmissionsCarEmissions" type="Area2D"]
 script = ExtResource("1_5de25")

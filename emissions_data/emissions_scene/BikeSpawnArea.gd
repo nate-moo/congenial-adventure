@@ -1,6 +1,6 @@
 extends CollisionShape2D
 
-@export var spawn_delay = 0
+@export var spawn_delay = 1
 
 var rng = RandomNumberGenerator.new()
 var delta_total = 0
@@ -14,15 +14,20 @@ func _ready():
 	bike = load("res://emissions_data/emissions_bike.tscn")
 	width = $'.'.shape.get_rect().size.x
 	offset = $'.'.shape.get_rect().position.x
+	rng.randomize()
 	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	delta_total += delta_total
+	delta_total += delta
+	# Check time passed for time based spawning
 	if (delta_total >= spawn_delay):
+		delta_total = 0
+		
 		var bike_instance = bike.instantiate()
-		rand = rng.randf_range(width + offset, width)
+		rand = rng.randf_range(width + offset, width * 1.5)
+		
 		bike_instance.passData(width, offset, rand)
 		get_parent().add_sibling(bike_instance)
 	pass

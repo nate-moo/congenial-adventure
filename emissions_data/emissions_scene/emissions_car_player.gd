@@ -11,7 +11,7 @@ var delta_full = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	emission = preload("res://emissions_data/emissions_car_emissions.tscn")
+	emission = load("res://emissions_data/emissions_car_emissions.tscn")
 	screen_size_original = get_viewport_rect().size
 	screen_size = screen_size_original
 	
@@ -32,8 +32,8 @@ func _process(delta):
 	if Input.is_action_pressed("emit_fumes"):
 		if (delta_full > emit_time):
 			delta_full = 0
-			get_parent().add_child(emission.instantiate())
-			pass 
+			var emission_instance = emission.instantiate()
+			get_parent().add_child(emission_instance)
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * player_speed
 	position += velocity * delta

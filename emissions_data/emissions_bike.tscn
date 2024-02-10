@@ -1,19 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://di4nn04kfkffv"]
+[gd_scene load_steps=5 format=3 uid="uid://di4nn04kfkffv"]
 
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/emissions_bike.gd" id="1_ipd4k"]
 [ext_resource type="Texture2D" uid="uid://bqrta3ped8pvt" path="res://emissions_data/emissions_game_images/temporary_bike.png" id="1_muc5j"]
+[ext_resource type="Script" path="res://emissions_data/BikeCollider.gd" id="2_f3uuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qocls"]
-size = Vector2(806.686, 510.484)
+size = Vector2(655.319, 351.585)
 
 [node name="EmissionsBike" type="Node2D"]
+scale = Vector2(0.359032, 0.339313)
 script = ExtResource("1_ipd4k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="BikeCollider" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(110.62, 179.251)
 rotation = -1.57079
 scale = Vector2(0.448127, 0.448127)
 shape = SubResource("RectangleShape2D_qocls")
+script = ExtResource("2_f3uuh")
 
-[node name="TemporaryBike" type="Sprite2D" parent="CollisionShape2D"]
+[node name="TemporaryBike" type="Sprite2D" parent="Area2D/BikeCollider"]
 texture = ExtResource("1_muc5j")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
