@@ -33,14 +33,12 @@ func _on_Main_Menu_pressed():
 func update_score(score):
 	$Score.text = "Score: " + str(score)
 
-# boilerplate i'm scared to delete
+func update_timer(time_left):
+	$Timer.text = "Time Remaining (s): " + str(time_left)
+
+# boilerplate i'm scared to delete 
 func _ready():
-	new_game()
-	pass # Replace with function body.
+	new_game() # leave this alone, makes game run first time entering
 
 func _process(delta):
 	pass
-#	update_score($"../Score_Timer")
-
-
-

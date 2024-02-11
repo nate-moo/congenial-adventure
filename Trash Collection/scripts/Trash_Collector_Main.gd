@@ -34,12 +34,15 @@ func new_game():
 	$Player_Collector.start($Start_Position.position) # initiate player
 	$Countdown.start() # 3 second timer before going into game
 	$HUD.update_score(score)
+	$HUD.update_timer($Time_Limit.get_time_left())
 	$HUD.show_message("Use arrow keys to pan side to side and catch trash!")
+	$Music.play()
 
 func end_game():
 	$Trash_Timer.stop()  # stop generating trash
 	await get_tree().create_timer(1.0).timeout # let trash finish falling
 	$HUD.show_message("Time's up!") 
+	$Music.stop()
 	await get_tree().create_timer(1.0).timeout # let trash finish falling
 	$HUD.play_again()
 
@@ -56,9 +59,10 @@ func _on_Time_Limit_timeout():
 func _on_player_collector_collect_trash():
 	score += 1
 	$HUD.update_score(score)
+	$ScorePoint.play()
 	
 func _ready():
 	new_game()
 
 func _process(delta):
-	pass
+	$HUD.update_timer($Time_Limit.get_time_left())

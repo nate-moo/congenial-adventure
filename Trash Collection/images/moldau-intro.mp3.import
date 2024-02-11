@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf64t8b23xw5n"
+path="res://.godot/imported/moldau-intro.mp3-815aab6ef3dfa8e0b747bf259fd8689a.mp3str"
+
+[deps]
+
+source_file="res://Trash Collection/images/moldau-intro.mp3"
+dest_files=["res://.godot/imported/moldau-intro.mp3-815aab6ef3dfa8e0b747bf259fd8689a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
