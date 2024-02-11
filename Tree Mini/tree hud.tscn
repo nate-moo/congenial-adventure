@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://caarr2hchft7t"]
+
+[ext_resource type="Script" path="res://Trash Collection/scripts/hud.gd" id="1_be6xj"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_be6xj")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 1032.0
+offset_top = 11.0
+offset_right = 1131.0
+offset_bottom = 55.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 31
+text = "0"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Message" type="Label" parent="."]
+offset_left = 346.0
+offset_top = 574.0
+offset_right = 873.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 21
+text = "WASD keys to move. You have 60 seconds to burn as many trees as you can!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Countdown" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="TakeYerMarks" type="Timer" parent="."]
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Replay" type="Button" parent="."]
+offset_left = 516.0
+offset_top = 337.0
+offset_right = 716.0
+offset_bottom = 387.0
+text = "Play Again"
+
+[node name="Main_Menu" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
+[connection signal="timeout" from="TakeYerMarks" to="." method="_on_take_yer_marks_timeout"]

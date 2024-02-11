@@ -2,7 +2,6 @@ extends Node
 
 @export var tree_scene: PackedScene
 @export var spawn_delay = 0.5
-var score
 var treeCount = 0
 var rng = RandomNumberGenerator.new()
 var delta_total = 0
@@ -10,10 +9,16 @@ var tree
 var width
 var offset
 var rand
+var score
 
 func _ready():
+	#$"Fire Sounds".play()
 	pass
 
+
+	
+func _on_fire_sounds_finished():
+	$"Fire Sounds".play()
 
 func _process(delta):
 	pass
