@@ -86,6 +86,8 @@ animations = [{
 script = ExtResource("1_e5dom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 17
+visibility_layer = 17
 position = Vector2(76, 108)
 shape = SubResource("RectangleShape2D_qyv8h")
 metadata/_edit_group_ = true
@@ -112,7 +114,7 @@ position = Vector2(-13.3333, 286.667)
 scale = Vector2(6.66667, 6.66667)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D/BlowtorchPlayer/Area2D"]
-light_mask = 5
+light_mask = 4
 position = Vector2(171, -36)
 shape = SubResource("RectangleShape2D_ku7q4")
 
@@ -120,12 +122,12 @@ shape = SubResource("RectangleShape2D_ku7q4")
 position = Vector2(1.52083, -25.5)
 scale = Vector2(0.0403371, 0.0449219)
 sprite_frames = SubResource("SpriteFrames_ts1w4")
-animation = &"Walk left"
+animation = &"Walk right"
 
 [node name="Fire blowtorch" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(-13.1046, -25.5)
 scale = Vector2(0.0533436, 0.046224)
 sprite_frames = SubResource("SpriteFrames_dbrc8")
-animation = &"No Space"
+animation = &"Walk right"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

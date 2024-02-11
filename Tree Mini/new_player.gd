@@ -20,10 +20,15 @@ func _ready():
 	character_size = $CollisionShape2D.shape.get_rect().size.y * shape_scale_factor_y
 	screen_size.y -= character_size
 
+	#$CollisionShape2D/BlowtorchPlayer/Area2D2/CollisionShape2D3.disabled = true
+	#$CollisionShape2D/BlowtorchPlayer/Area2D/CollisionShape2D2.disabled = true
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var velocity = Vector2.ZERO
+	
 	$"CollisionShape2D/Fire blowtorch".play("No Space")
+		
 	if Input.is_action_pressed("tree_player_left"):
 		velocity.x -= 1
 		$CollisionShape2D/Blowtorch.play("Walk left")
@@ -53,6 +58,10 @@ func _process(delta):
 		$CollisionShape2D/BlowtorchPlayer/Area2D2/CollisionShape2D3.disabled = true
 		$CollisionShape2D/BlowtorchPlayer/Area2D/CollisionShape2D2.disabled = false
 		$"CollisionShape2D/Fire blowtorch".play("Walk right")
+	else:
+		$CollisionShape2D/BlowtorchPlayer/Area2D2/CollisionShape2D3.disabled = true
+		$CollisionShape2D/BlowtorchPlayer/Area2D/CollisionShape2D2.disabled = true
+	
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed

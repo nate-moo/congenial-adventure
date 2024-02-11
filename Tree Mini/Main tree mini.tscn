@@ -22,7 +22,6 @@ wait_time = 2.0
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
-visibility_layer = 16384
 
 [node name="TreeSpawnZone" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(575, 286.375)

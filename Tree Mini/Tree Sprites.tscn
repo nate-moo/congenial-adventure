@@ -72,6 +72,7 @@ animation = &"Green"
 [node name="Area2D2" type="Area2D" parent="TreeBurning"]
 position = Vector2(-270, -595)
 scale = Vector2(5, 5)
+collision_layer = 2
 
 [node name="Green Collision" type="CollisionShape2D" parent="TreeBurning/Area2D2"]
 light_mask = 2
