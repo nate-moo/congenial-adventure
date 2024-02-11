@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://csrbd3f7sqokp"]
+
+[ext_resource type="Script" path="res://river_pollution_scene/You Lose.gd" id="1_vn8ut"]
+
+[node name="You Lose" type="Label"]
+offset_left = 470.0
+offset_top = 242.0
+offset_right = 678.0
+offset_bottom = 311.0
+theme_override_font_sizes/font_size = 50
+text = "You Lost"
+script = ExtResource("1_vn8ut")

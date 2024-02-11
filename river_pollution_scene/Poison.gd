@@ -12,5 +12,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	node = get_parent().get_parent().get_poison()
-	text = "Poison" + str(node)
+	dmg_show = 30 - node
+	if (dmg_show == 27):
+		modulate = Color(1,0,0)
+	text = "Poison Level: " + str(dmg_show)
 	#pass
