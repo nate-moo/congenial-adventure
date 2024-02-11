@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu1ic64d87jqr"
+path="res://.godot/imported/fire-sound-efftect-21991.mp3-74e6329bde9920d95b07576b5f128260.mp3str"
+
+[deps]
+
+source_file="res://Tree Mini/Img Trees/fire-sound-efftect-21991.mp3"
+dest_files=["res://.godot/imported/fire-sound-efftect-21991.mp3-74e6329bde9920d95b07576b5f128260.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbp7mkbqbl0d4"]
+[gd_scene load_steps=14 format=3 uid="uid://bbp7mkbqbl0d4"]
 
 [ext_resource type="Script" path="res://Tree Mini/Tree_Sprites.gd" id="1_eg3e0"]
 [ext_resource type="Texture2D" uid="uid://chtbd4y6k3g8e" path="res://Tree Mini/Img Trees/Green tree.png" id="2_34mc3"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cbuby4bv8k0c4" path="res://Tree Mini/Img Trees/Fire 1.png" id="7_yrrdi"]
 [ext_resource type="Texture2D" uid="uid://djhrko2h87d1k" path="res://Tree Mini/Img Trees/Fire 2.png" id="8_is2sf"]
 [ext_resource type="Texture2D" uid="uid://b3vkkdga3cd1a" path="res://Tree Mini/Img Trees/Fire 3.png" id="9_6np52"]
+[ext_resource type="AudioStream" uid="uid://bu1ic64d87jqr" path="res://Tree Mini/Img Trees/fire-sound-efftect-21991.mp3" id="10_fm060"]
+[ext_resource type="Script" path="res://Tree Mini/Fire Sounds.gd" id="11_hdtei"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6r1s6"]
 animations = [{
@@ -81,6 +83,11 @@ position = Vector2(54, 181)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nnwib")
 
+[node name="Fire Sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_fm060")
+script = ExtResource("11_hdtei")
+
 [connection signal="animation_finished" from="TreeBurning" to="." method="_on_tree_burning_animation_finished"]
 [connection signal="animation_looped" from="TreeBurning" to="." method="_on_tree_burning_animation_looped"]
 [connection signal="area_entered" from="TreeBurning/Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="finished" from="Fire Sounds" to="." method="_on_fire_sounds_finished"]
