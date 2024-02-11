@@ -27,6 +27,7 @@ visibility_layer = 16384
 [node name="TreeSpawnZone" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(575, 286.375)
 shape = SubResource("RectangleShape2D_5luxe")
+disabled = true
 script = ExtResource("3_v1o6r")
 
 [node name="Start Position" type="Marker2D" parent="."]

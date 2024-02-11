@@ -99,14 +99,21 @@ frame = 2
 frame_progress = 0.307938
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D/BlowtorchPlayer"]
-position = Vector2(1126.67, 46.6667)
-scale = Vector2(6.66667, 6.66667)
-shape = SubResource("RectangleShape2D_ku7q4")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionShape2D/BlowtorchPlayer"]
+[node name="Area2D2" type="Area2D" parent="CollisionShape2D/BlowtorchPlayer"]
 position = Vector2(-1143.33, 56.6667)
 scale = Vector2(6.66667, 6.66667)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionShape2D/BlowtorchPlayer/Area2D2"]
+light_mask = 4
+shape = SubResource("RectangleShape2D_ku7q4")
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D/BlowtorchPlayer"]
+position = Vector2(-13.3333, 286.667)
+scale = Vector2(6.66667, 6.66667)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D/BlowtorchPlayer/Area2D"]
+light_mask = 5
+position = Vector2(171, -36)
 shape = SubResource("RectangleShape2D_ku7q4")
 
 [node name="Blowtorch" type="AnimatedSprite2D" parent="CollisionShape2D"]

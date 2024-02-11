@@ -80,7 +80,10 @@ BlowTorch={
 [layer_names]
 
 2d_render/layer_1="Top"
+2d_render/layer_3="Tree Layer"
 2d_render/layer_10="Background"
+2d_physics/layer_1="Trees"
+2d_physics/layer_2="Player"
 
 [rendering]
 
