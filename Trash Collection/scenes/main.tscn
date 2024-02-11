@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://kj3k00tixkkm"]
+[gd_scene load_steps=7 format=3 uid="uid://kj3k00tixkkm"]
 
 [ext_resource type="Script" path="res://Trash Collection/scripts/Trash_Collector_Main.gd" id="1_jp1ol"]
 [ext_resource type="PackedScene" uid="uid://b2tfg76hhom3p" path="res://Trash Collection/scenes/garbage.tscn" id="2_22ey6"]
 [ext_resource type="PackedScene" uid="uid://cpjxv5cs7jhlo" path="res://Trash Collection/scenes/collector_character.tscn" id="3_kcwbf"]
+[ext_resource type="Texture2D" uid="uid://4j7bioo66f1x" path="res://Trash Collection/images/background.png" id="3_xji5b"]
 [ext_resource type="PackedScene" uid="uid://cneyujbr88ufk" path="res://Trash Collection/scenes/hud.tscn" id="4_1odo4"]
 
 [sub_resource type="Curve2D" id="Curve2D_vtkkn"]
@@ -14,6 +15,14 @@ point_count = 2
 [node name="Main" type="Node"]
 script = ExtResource("1_jp1ol")
 trash_scene = ExtResource("2_22ey6")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xji5b")
 
 [node name="Player_Collector" parent="." instance=ExtResource("3_kcwbf")]
 position = Vector2(95, 83)
