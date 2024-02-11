@@ -30,3 +30,4 @@ one_shot = true
 [node name="TakeYerMarks" type="Timer" parent="."]
 
 [connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
+[connection signal="timeout" from="TakeYerMarks" to="." method="_on_take_yer_marks_timeout"]

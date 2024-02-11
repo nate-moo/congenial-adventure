@@ -45,20 +45,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbfwg"]
-size = Vector2(29, 40)
+size = Vector2(54, 51)
 
 [node name="Garbage" type="Area2D"]
 script = ExtResource("1_xsxtv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(10, 10)
+position = Vector2(27, 25)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_52ffo")
-animation = &"can"
+animation = &"paper_wad"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.5, 10)
+position = Vector2(27, 25.5)
 shape = SubResource("RectangleShape2D_qbfwg")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(10, 10)
+position = Vector2(27, 25)
+scale = Vector2(2.15, 1.9)
