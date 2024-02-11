@@ -35,8 +35,6 @@ func _process(delta):
 	#await get_tree().create_timer(1.0).timeout
 		$".".add_child(tire_insta)
 		
-	if (poison_dmg == 0):
-		#lose = load("res://river_pollution_scene/Lose.tscn")
-		#lose.instantiate()
+	if (poison_dmg <= 0):
 		print("Goodbye Fish.")
 		get_tree().change_scene_to_file("res://minigames_scene.tscn")	

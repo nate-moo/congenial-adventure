@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://river_pollution_scene/floor.gd" id="4_f5mhu"]
 [ext_resource type="Texture2D" uid="uid://ced68qc3ixn52" path="res://river_pollution_scene/riverpollution_images/moving_platform.png" id="4_k42vx"]
 [ext_resource type="Script" path="res://river_pollution_scene/Poison.gd" id="6_qd1p4"]
-[ext_resource type="AudioStream" uid="uid://dar5pb3664dkm" path="res://meditation-sounds-122698.mp3" id="7_uhum4"]
+[ext_resource type="AudioStream" uid="uid://bddly5ndditvo" path="res://river_pollution_scene/starlight-meditation-10986.mp3" id="7_vkho8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s05my"]
 radius = 37.0
@@ -63,5 +63,6 @@ offset_bottom = -205.0
 text = "Press Backspace to Exit"
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_uhum4")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_vkho8")
+autoplay = true
