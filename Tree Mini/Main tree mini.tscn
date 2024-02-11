@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://crah2sfhuym8g" path="res://Tree Mini/Img Trees/Bard_Generated_Image (1).jpg" id="4_7ak8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5luxe"]
-size = Vector2(1152, 648.5)
+size = Vector2(1152, 571.25)
 
 [node name="MainTreeMini" type="Node"]
 script = ExtResource("1_ednvm")
@@ -25,7 +25,7 @@ autostart = true
 visibility_layer = 16384
 
 [node name="TreeSpawnZone" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(577, 322.75)
+position = Vector2(575, 286.375)
 shape = SubResource("RectangleShape2D_5luxe")
 script = ExtResource("3_v1o6r")
 

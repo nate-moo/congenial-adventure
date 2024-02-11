@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ck0c8n6apat"
-path="res://.godot/imported/trash-1.png-2c3dbf4343a10988f9288f18c5ba8606.ctex"
+uid="uid://crg2jbphhrtjt"
+path="res://.godot/imported/happy-2.png-5e172e4c0aa8b37c60b689306652e272.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Trash Collection/images/trash-1.png"
-dest_files=["res://.godot/imported/trash-1.png-2c3dbf4343a10988f9288f18c5ba8606.ctex"]
+source_file="res://Trash Collection/images/happy-2.png"
+dest_files=["res://.godot/imported/happy-2.png-5e172e4c0aa8b37c60b689306652e272.ctex"]
 
 [params]
 

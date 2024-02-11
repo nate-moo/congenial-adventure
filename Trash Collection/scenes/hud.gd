@@ -1,21 +1,31 @@
 extends CanvasLayer
 signal start_game
+var countdown = 3
 
 func show_message(text):
 	$"Message".text = text
 	$"Message".show()
 	$"MessageTimer".start()
 
-func show_time_up():
+func _on_take_yer_marks_timeout():
+	countdown -= 1
+	if countdown != 0:
+		$Message.text = str(countdown)
+		$Message.show()
+		$Timer.start()
+	else:
+		pass #add code for starting game here
+	
+func _on_countdown_timeout():
 	show_message("Time's up! ")
-	await $"MessageTimer".timeout
+#	await $"MessageTimer".timeout
 	
 	$Message.text = "Here's your score. "
 	$Message.show()
 	# short timer before next action
-	await get_tree().create_timer(1.0).timeout
-	$Message.text = "temporary message"
-	$Message.show()
+	#await get_tree().create_timer(1.0).timeout
+	#$Message.text = "temporary message"
+	#$Message.show()
 	
 func update_score(score):
 	$Score.text = "Score: " + str(score)
@@ -27,3 +37,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+

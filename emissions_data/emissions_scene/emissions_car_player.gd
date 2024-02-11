@@ -31,10 +31,14 @@ func _process(delta):
 	if Input.is_action_pressed("car_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("emit_fumes"):
-		if (delta_full > emit_time):
+		if (delta_full > emit_time): # total time elapsed
 			delta_full = 0
+<<<<<<< HEAD
+			var emission_instance = emission.instantiate() # limit emission rate
+=======
 			var emission_instance = emission.instantiate()
 			emission_instance.connect('score_up')
+>>>>>>> dbad414bbc92f90ca9c98320303131b82f30ae4f
 			get_parent().add_child(emission_instance)
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * player_speed
