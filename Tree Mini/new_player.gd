@@ -24,6 +24,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var velocity = Vector2.ZERO
+	$"CollisionShape2D/Fire blowtorch".play("No Space")
 	if Input.is_action_pressed("tree_player_left"):
 		velocity.x -= 1
 		$CollisionShape2D/Blowtorch.play("Walk left")
@@ -34,8 +35,12 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("tree_player_back"):
 		velocity.y += 1
-		
-	
+	if (Input.is_action_pressed("BlowTorch") && velocity.x == -1):
+		$"CollisionShape2D/Fire blowtorch".play("Walk left")
+	if (Input.is_action_pressed("BlowTorch") && velocity.x == 1):
+		$"CollisionShape2D/Fire blowtorch".play("Walk right")
+
+
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$CollisionShape2D/BlowtorchPlayer.play()
@@ -44,7 +49,6 @@ func _process(delta):
 	
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
-
 
 
 func _on_body_entered(body):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b42kwyk4cjbb2"]
+[gd_scene load_steps=15 format=3 uid="uid://b42kwyk4cjbb2"]
 
 [ext_resource type="Texture2D" uid="uid://brsx7enll7piv" path="res://Tree Mini/Img Trees/Player standing.png" id="1_d6dsg"]
 [ext_resource type="Script" path="res://Tree Mini/new_player.gd" id="1_e5dom"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvw7k8qxwgvdu" path="res://Tree Mini/Img Trees/Blowtorch left.png" id="5_cwxya"]
 [ext_resource type="Texture2D" uid="uid://c76nwyaycsnp4" path="res://Tree Mini/Img Trees/Blowtorch right.png" id="6_f1xkc"]
 [ext_resource type="Texture2D" uid="uid://c13e3matyc7b2" path="res://Tree Mini/Img Trees/blow torch fire left.png" id="7_skrqi"]
+[ext_resource type="Texture2D" uid="uid://cd1vlv67u07ou" path="res://Tree Mini/Img Trees/Transparent.png" id="7_xb7w5"]
 [ext_resource type="Texture2D" uid="uid://ct3ypr5n18dae" path="res://Tree Mini/Img Trees/blow torch fire right.png" id="8_556ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyv8h"]
@@ -32,6 +33,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ku7q4"]
+size = Vector2(165, 27)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ts1w4"]
 animations = [{
 "frames": [{
@@ -55,6 +59,14 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_xb7w5")
+}],
+"loop": true,
+"name": &"No Space",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_skrqi")
 }],
 "loop": true,
@@ -74,7 +86,7 @@ animations = [{
 script = ExtResource("1_e5dom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(58, 116)
+position = Vector2(76, 108)
 shape = SubResource("RectangleShape2D_qyv8h")
 metadata/_edit_group_ = true
 
@@ -87,6 +99,16 @@ frame = 2
 frame_progress = 0.307938
 metadata/_edit_group_ = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CollisionShape2D/BlowtorchPlayer"]
+position = Vector2(1126.67, 46.6667)
+scale = Vector2(6.66667, 6.66667)
+shape = SubResource("RectangleShape2D_ku7q4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CollisionShape2D/BlowtorchPlayer"]
+position = Vector2(-1143.33, 56.6667)
+scale = Vector2(6.66667, 6.66667)
+shape = SubResource("RectangleShape2D_ku7q4")
+
 [node name="Blowtorch" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(1.52083, -25.5)
 scale = Vector2(0.0403371, 0.0449219)
@@ -94,10 +116,9 @@ sprite_frames = SubResource("SpriteFrames_ts1w4")
 animation = &"Walk left"
 
 [node name="Fire blowtorch" type="AnimatedSprite2D" parent="CollisionShape2D"]
-visible = false
 position = Vector2(-13.1046, -25.5)
 scale = Vector2(0.0533436, 0.046224)
 sprite_frames = SubResource("SpriteFrames_dbrc8")
-animation = &"Walk left"
+animation = &"No Space"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
