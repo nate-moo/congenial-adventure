@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var shape_scale_factor = 0.321
+@export var shape_scale_factor = 0.6
 var screen_size
 var screen_size_original
 var playa_size
@@ -7,31 +7,32 @@ const GRAVITY = 100.0
 const WALK_SPEED = 200
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var jump_avail
+
 func _ready():
-	#screen_size_original = get_viewport_rect().size
-	print(screen_size_original)
-	#screen_size = screen_size_original
-	#playa_size = $'CollisionShape2D'.shape.get_rect().size.y * shape_scale_factor
+	print("Stayin' Alive")
+	screen_size_original = get_viewport_rect().size
+	#print(screen_size_original)
+	screen_size = screen_size_original
+	playa_size = $'CollisionShape2D'.shape.get_rect().size.y * shape_scale_factor
 	#screen_size.x -= playa_size
-	#position = position.clamp(Vector2.ZERO, screen_size)
-	var t = get_viewport_transform()
-	print(t)
-	print(t[2][0])
-	print(t[2][1])
-	#var pos = t.xform(global_position)
-	#var end = get_viewport().size
-	print(Vector2(1,0))
-	var vecx := Vector2(1,0)
-	print(Vector2.ZERO)
-	print(vecx)
-	#print(position.x)
-	print(Vector2(t[0]))
-	print(Vector2(t[2][0],0))
 	#position.x = position.clamp(Vector2(t[0]), Vector2(t[2][0],0))
 	#position.y = position.clamp(Vector2.ZERO, end.y)
 	#global_position = t.affine_inverse().xform(pos)
 	
 func _physics_process(delta):
+	#position = position.clamp(Vector2.ZERO, screen_size)
+	#var t = get_viewport_transform()
+	#position = position.clamp(Vector2.ZERO, screen_size)
+	#screen_size_original = get_viewport_rect().size
+	#screen_size = screen_size_original
+	#playa_size = $'CollisionShape2D'.shape.get_rect().size.y * shape_scale_factor
+	#screen_size.x -= playa_size
+	#position = position.clamp(Vector2.ZERO, screen_size)
+	#var t = get_viewport_transform()
+	#print(t)
+	#var pos = t.xform(global_position)
+
+	#position = position.clamp(Vector2.ZERO, Vector2.ZERO)
 	#position = position.clamp(Vector2.ZERO, screen_size)
 	#print(delta)
 	#velocity.y += delta * gravity
@@ -67,3 +68,4 @@ func _physics_process(delta):
 
 	# "move_and_slide" already takes delta time into account.
 	move_and_slide()
+
