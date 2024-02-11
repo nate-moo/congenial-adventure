@@ -1,16 +1,49 @@
 extends CharacterBody2D
-
+@export var shape_scale_factor = 0.321
+var screen_size
+var screen_size_original
+var playa_size
 const GRAVITY = 100.0
 const WALK_SPEED = 200
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var jump_avail
+func _ready():
+	#screen_size_original = get_viewport_rect().size
+	print(screen_size_original)
+	#screen_size = screen_size_original
+	#playa_size = $'CollisionShape2D'.shape.get_rect().size.y * shape_scale_factor
+	#screen_size.x -= playa_size
+	#position = position.clamp(Vector2.ZERO, screen_size)
+	var t = get_viewport_transform()
+	print(t)
+	print(t[2][0])
+	print(t[2][1])
+	#var pos = t.xform(global_position)
+	#var end = get_viewport().size
+	print(Vector2(1,0))
+	var vecx := Vector2(1,0)
+	print(Vector2.ZERO)
+	print(vecx)
+	#print(position.x)
+	print(Vector2(t[0]))
+	print(Vector2(t[2][0],0))
+	#position.x = position.clamp(Vector2(t[0]), Vector2(t[2][0],0))
+	#position.y = position.clamp(Vector2.ZERO, end.y)
+	#global_position = t.affine_inverse().xform(pos)
+	
 func _physics_process(delta):
+	#position = position.clamp(Vector2.ZERO, screen_size)
 	#print(delta)
 	#velocity.y += delta * gravity
-	velocity.y += 0 if is_on_floor() else delta * gravity
+	if is_on_floor() :
+		velocity.y += 0 
+		velocity.x *= 0.4
+		jump_avail = 2
+	else: 
+		velocity.y = delta * (gravity*25)
 	
-	print(position.y)
-	print(is_on_floor())
+	#print(position.y)
+		
 	
 	#if (position.y > 202.4):
 		#position.y -= 2
@@ -20,9 +53,17 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		velocity.x =  WALK_SPEED
 	if Input.is_action_pressed("fish_jump"):
-		velocity.y -= 100
+		jump_avail -= 1
+		velocity.y -= 750
+		if Input.is_action_pressed("move_right"):
+			velocity.x =  WALK_SPEED
+		if Input.is_action_pressed("move_left"):
+			velocity.x = -WALK_SPEED
+	if Input.is_action_pressed("exit_back"):
+		get_tree().change_scene_to_file("res://minigames_scene.tscn")
 	#else:
 		#velocity.x = 0
+		
 
 	# "move_and_slide" already takes delta time into account.
 	move_and_slide()

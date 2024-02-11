@@ -32,23 +32,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrome"]
-size = Vector2(118, 157.477)
+size = Vector2(114, 171.438)
 
 [node name="Player_Collector" type="Area2D"]
 position = Vector2(60, 78)
 script = ExtResource("1_n1y6s")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(1, 2)
 scale = Vector2(0.375, 0.375)
 sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"trash-happy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -7.00002)
+position = Vector2(0, -4.75005)
 scale = Vector2(1, 0.89537)
 shape = SubResource("RectangleShape2D_jrome")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_Player_Collector_body_entered"]

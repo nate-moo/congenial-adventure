@@ -1,29 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://df61ocg4ic7tr"]
+[gd_scene load_steps=4 format=3 uid="uid://df61ocg4ic7tr"]
 
 [ext_resource type="Script" path="res://river_pollution_scene/Playa.gd" id="1_0poo4"]
 [ext_resource type="Texture2D" uid="uid://c55deldv1oddv" path="res://river_pollution_scene/riverpollution_images/save_me.png" id="2_7gfpi"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ce4l"]
-radius = 16.0
-height = 46.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hx2v1"]
-radius = 16.0
-height = 46.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_sycgb"]
 
 [node name="Playa" type="CharacterBody2D"]
-motion_mode = 1
+position = Vector2(1, 0)
 script = ExtResource("1_0poo4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_3ce4l")
-one_way_collision_margin = 20.0
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_hx2v1")
-one_way_collision_margin = 20.0
+position = Vector2(340, 164)
+shape = SubResource("CircleShape2D_sycgb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(338, 167)
 texture = ExtResource("2_7gfpi")

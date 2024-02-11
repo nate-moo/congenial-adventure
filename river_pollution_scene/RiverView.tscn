@@ -20,11 +20,12 @@ position = Vector2(-1, -2)
 scale = Vector2(1.59333, 1.6)
 texture = ExtResource("1_bcr05")
 
+[node name="Camera2D" type="Camera2D" parent="Background"]
+position = Vector2(1.25523, 3.75)
+scale = Vector2(0.627616, 0.625)
+
 [node name="Playa" parent="." instance=ExtResource("1_y7jko")]
 position = Vector2(0, 2)
-
-[node name="Camera2D" type="Camera2D" parent="Playa"]
-position = Vector2(1, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 script = ExtResource("4_f5mhu")
@@ -39,3 +40,16 @@ position = Vector2(0, 247)
 rotation = 1.57079
 shape = SubResource("CapsuleShape2D_s05my")
 one_way_collision_margin = 20.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Poison" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Exit" type="Label" parent="."]
+offset_left = -558.0
+offset_top = -228.0
+offset_right = -378.0
+offset_bottom = -205.0
+text = "Press Backspace to Exit"
