@@ -10,10 +10,10 @@ func _ready():
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free() # if implementing litterer?
 
-func _on_Garbage_body_entered(body): #might be an area function
-	hide()
-#	collected.emit() # disabled since player (theoretically) handles collisions
-	$CollisionShape2D.set_deferred("disabled", true)
+#func _on_Garbage_body_entered(body): #might be an area function
+	#hide()
+##	collected.emit() # disabled since player (theoretically) handles collisions
+	#$CollisionShape2D.set_deferred("disabled", true)
 
 #func _on_collected():
 	#pass # Replace with function body.	

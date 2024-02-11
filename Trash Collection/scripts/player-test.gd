@@ -42,6 +42,6 @@ func _on_Player_Collector_body_entered(body):
 	#this might be an area function, check for later
 
 
-func _on_area_entered(area):
-	print("body entered 2")
+func _on_body_entered(body):
+	print("Body collided")
 	pass # Replace with function body.
