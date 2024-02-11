@@ -69,7 +69,7 @@ script = ExtResource("1_eg3e0")
 position = Vector2(4, -0.999992)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6r1s6")
-animation = &"Green"
+animation = &"Orange"
 
 [node name="Area2D2" type="Area2D" parent="TreeBurning"]
 position = Vector2(-270, -595)
@@ -80,7 +80,6 @@ collision_layer = 2
 light_mask = 2
 visibility_layer = 0
 position = Vector2(54, 181)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nnwib")
 
 [node name="Fire Sounds" type="AudioStreamPlayer2D" parent="."]

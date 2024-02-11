@@ -1,19 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxpa3yp480i8"]
+[gd_scene load_steps=9 format=3 uid="uid://cxpa3yp480i8"]
 
 [ext_resource type="PackedScene" uid="uid://b42kwyk4cjbb2" path="res://Tree Mini/new_player.tscn" id="1_db0ps"]
 [ext_resource type="Script" path="res://Tree Mini/Main tree mini.gd" id="1_ednvm"]
-[ext_resource type="PackedScene" uid="uid://caarr2hchft7t" path="res://Tree Mini/tree hud.tscn" id="2_hucrj"]
 [ext_resource type="Script" path="res://Tree Mini/Button.gd" id="2_k12ka"]
 [ext_resource type="Script" path="res://Tree Mini/TreeSpawnZone.gd" id="3_v1o6r"]
 [ext_resource type="Texture2D" uid="uid://crah2sfhuym8g" path="res://Tree Mini/Img Trees/Bard_Generated_Image (1).jpg" id="4_7ak8a"]
+[ext_resource type="Script" path="res://Tree Mini/ScoreLabel.gd" id="6_5cdvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5luxe"]
 size = Vector2(1152, 571.25)
 
+[sub_resource type="Theme" id="Theme_2sxot"]
+
 [node name="MainTreeMini" type="Node"]
 script = ExtResource("1_ednvm")
-
-[node name="HUD" parent="." instance=ExtResource("2_hucrj")]
 
 [node name="Forest Floor" type="Sprite2D" parent="."]
 visibility_layer = 524800
@@ -24,6 +24,8 @@ texture = ExtResource("4_7ak8a")
 [node name="Tree Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Game Timer" type="Timer" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -36,14 +38,20 @@ script = ExtResource("3_v1o6r")
 [node name="Start Position" type="Marker2D" parent="."]
 position = Vector2(240, 450)
 
-[node name="Game Timer" type="Timer" parent="."]
-
 [node name="NewPlayer" parent="." instance=ExtResource("1_db0ps")]
 show_behind_parent = true
 top_level = true
 position = Vector2(614, 223)
 
-[node name="Button" type="Button" parent="."]
+[node name="User Interface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_2sxot")
+
+[node name="Button" type="Button" parent="User Interface"]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 14.0
 offset_right = 64.0
@@ -51,4 +59,14 @@ offset_bottom = 45.0
 text = "Quit"
 script = ExtResource("2_k12ka")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="ScoreLabel" type="Label" parent="User Interface"]
+layout_mode = 0
+offset_left = 992.0
+offset_top = 65.0
+offset_right = 1100.0
+offset_bottom = 103.0
+text = "Score: 0"
+horizontal_alignment = 1
+script = ExtResource("6_5cdvt")
+
+[connection signal="pressed" from="User Interface/Button" to="User Interface/Button" method="_on_pressed"]
