@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbp7mkbqbl0d4"]
+[gd_scene load_steps=13 format=3 uid="uid://bbp7mkbqbl0d4"]
 
 [ext_resource type="Script" path="res://Tree Mini/Tree_Sprites.gd" id="1_eg3e0"]
 [ext_resource type="Texture2D" uid="uid://chtbd4y6k3g8e" path="res://Tree Mini/Img Trees/Green tree.png" id="2_34mc3"]
@@ -54,31 +54,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"Orange Burn",
-"speed": 1.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnwib"]
-size = Vector2(9.99999, 104)
+size = Vector2(8, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2piv"]
+size = Vector2(12, 41)
 
 [node name="TreeSprite" type="Node2D"]
 script = ExtResource("1_eg3e0")
 
 [node name="TreeBurning" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -0.999992)
+position = Vector2(54, 119)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6r1s6")
-animation = &"Green"
+animation = &"Green Burn"
 
 [node name="Area2D2" type="Area2D" parent="TreeBurning"]
 position = Vector2(-270, -595)
 scale = Vector2(5, 5)
 
 [node name="Green Collision" type="CollisionShape2D" parent="TreeBurning/Area2D2"]
-light_mask = 2
-visibility_layer = 0
-position = Vector2(54, 181)
-scale = Vector2(1, 1)
+position = Vector2(53, 207)
 shape = SubResource("RectangleShape2D_nnwib")
+
+[node name="Area2D" type="Area2D" parent="TreeBurning"]
+position = Vector2(325, 445)
+scale = Vector2(5, 5)
+
+[node name="Orange Collision" type="CollisionShape2D" parent="TreeBurning/Area2D"]
+position = Vector2(-60, -26)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_q2piv")
 
 [connection signal="animation_finished" from="TreeBurning" to="." method="_on_tree_burning_animation_finished"]
 [connection signal="animation_looped" from="TreeBurning" to="." method="_on_tree_burning_animation_looped"]

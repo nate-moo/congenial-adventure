@@ -3,20 +3,31 @@ extends Node2D
 var width
 var height
 var rand_num
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	var tree_types = $TreeBurning.sprite_frames.get_animation_names()
-	$TreeBurning.play(tree_types[randi() % tree_types.size()])
-
-	$'.'.position.y = width
-	$'.'.position.x = height
+var color
+#var current_tree = $TreeBurning
 
 func passData(width_pass, height_pass):
 	width = width_pass
 	height = height_pass
 
-# dele
+func _ready():
+	$'.'.position.y = width
+	$'.'.position.x = height
+	if (randi() % 2 == 0):
+		$TreeBurning.play("Green")
+		color = "green"
+	elif (randi() % 2 == 1):
+		$TreeBurning.play("Orange")
+		color = "orange"
+
 func _on_tree_burning_animation_looped():
-	$TreeBurning.queue_free()
-	pass # Replace with function body.
+	if ($TreeBurning.animation == "Green Burn" or $TreeBurning.animation == "Orange Burn"):
+		$TreeBurning.queue_free()
+
+func _on_area_2d_2_area_entered(area):
+	if self.get_parent() != area.get_parent():
+		if (color == "green"):
+			$TreeBurning.play("Green Burn")
+		if (color == "orange"):
+			$TreeBurning.play("Orange Burn")
+
