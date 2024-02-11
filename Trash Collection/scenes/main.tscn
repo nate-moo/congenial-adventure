@@ -11,12 +11,12 @@ _data = {
 }
 point_count = 2
 
-[node name="Main_Trash_Collector" type="Node"]
+[node name="Main" type="Node"]
 script = ExtResource("1_jp1ol")
 trash_scene = ExtResource("2_22ey6")
 
 [node name="Player_Collector" parent="." instance=ExtResource("3_kcwbf")]
-position = Vector2(80, 72)
+position = Vector2(95, 83)
 
 [node name="Trash_Timer" type="Timer" parent="."]
 

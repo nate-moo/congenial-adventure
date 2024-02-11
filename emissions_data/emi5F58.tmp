@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://daa7yf7iqad7g"]
+[gd_scene load_steps=10 format=3 uid="uid://daa7yf7iqad7g"]
 
 [ext_resource type="Texture2D" uid="uid://bn4rcvl8ecpr" path="res://emissions_data/emissions_game_images/Seamless-Road-Texture1.jpg" id="1_vffgv"]
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/road_scroll.gd" id="2_4e2lh"]
@@ -7,10 +7,6 @@
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/BikeSpawnArea.gd" id="4_rexjc"]
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/ScoreCount.gd" id="6_x5uyl"]
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/Timer.gd" id="7_j0hyg"]
-[ext_resource type="Script" path="res://emissions_data/emissions_scene/End Screen.gd" id="8_wrcc4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_buuof"]
-size = Vector2(544, 76)
 
 [sub_resource type="GDScript" id="GDScript_wa7rs"]
 script/source = "extends Button
@@ -30,7 +26,18 @@ func _on_pressed():
 	pass # Replace with function body.
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buuof"]
+size = Vector2(544, 76)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 43.0
+offset_bottom = 35.0
+text = "Quit"
+script = SubResource("GDScript_wa7rs")
 
 [node name="Grazz" type="Sprite2D" parent="."]
 position = Vector2(893, -132)
@@ -122,36 +129,6 @@ script = ExtResource("7_j0hyg")
 
 [node name="Timer2" type="Timer" parent="VBoxContainer/TimerLabel"]
 wait_time = 60.0
-one_shot = true
-autostart = true
 
-[node name="Button" type="Button" parent="."]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 50.0
-offset_bottom = 39.0
-text = "Quit"
-script = SubResource("GDScript_wa7rs")
-
-[node name="End Screen" type="VBoxContainer" parent="."]
-visible = false
-offset_left = 420.0
-offset_top = 214.0
-offset_right = 694.0
-offset_bottom = 319.0
-script = ExtResource("8_wrcc4")
-
-[node name="Polygon2D" type="Polygon2D" parent="End Screen"]
-position = Vector2(3, -13)
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(1, -6, 294, -7, 294, 55, -1, 54)
-
-[node name="Label" type="Label" parent="End Screen"]
-layout_mode = 2
-text = "Game Over, Good Job!"
-horizontal_alignment = 1
-
-[connection signal="timeout" from="VBoxContainer/TimerLabel/Timer2" to="EmissionsCarPlayerScene2d" method="_on_timer_2_timeout"]
-[connection signal="timeout" from="VBoxContainer/TimerLabel/Timer2" to="Area2D/BikeSpawnArea" method="_on_timer_2_timeout"]
-[connection signal="timeout" from="VBoxContainer/TimerLabel/Timer2" to="End Screen" method="_on_timer_2_timeout"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="timeout" from="VBoxContainer/TimerLabel/Timer2" to="VBoxContainer/TimerLabel/Timer" method="_on_timer_2_timeout"]

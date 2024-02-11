@@ -33,3 +33,10 @@ func _process(delta):
 		bike_instance.passData(width, offset, rand)
 		get_parent().add_sibling(bike_instance)
 	pass
+
+
+func _on_timer_2_timeout():
+	$'.'.queue_free()
+	get_tree().call_group("emissions_bike", "queue_free")
+	
+	pass # Replace with function body.
