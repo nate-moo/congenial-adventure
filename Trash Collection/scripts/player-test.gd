@@ -36,3 +36,4 @@ func start(pos):
 func _on_Player_Collector_body_entered(_body): #added underscore due to docs?
 	collect_trash.emit()
 	$AnimatedSprite2D.animation = "trash-happy"
+	#this might be an area function, check for later
