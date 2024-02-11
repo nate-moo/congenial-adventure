@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2tfg76hhom3p"]
+[gd_scene load_steps=11 format=3 uid="uid://b2tfg76hhom3p"]
 
 [ext_resource type="Texture2D" uid="uid://bkdrtnihees4t" path="res://Trash Collection/images/bottle.png" id="1_v0cq0"]
 [ext_resource type="Script" path="res://Trash Collection/scenes/garbage.gd" id="1_xsxtv"]
@@ -47,7 +47,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbfwg"]
 size = Vector2(54, 51)
 
-[node name="Garbage" type="Area2D"]
+[sub_resource type="Curve2D" id="Curve2D_4vymr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5, -14, 0, 0, 0, 0, -21, -33, 0, 0, 0, 0, 1151, 1, 0, 0, 0, 0, 1151, 65, 0, 0, 0, 0, 1, 68, 0, 0, 0, 0, -5, -14)
+}
+point_count = 6
+
+[node name="Garbage" type="RigidBody2D"]
 script = ExtResource("1_xsxtv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -64,4 +70,9 @@ shape = SubResource("RectangleShape2D_qbfwg")
 position = Vector2(27, 25)
 scale = Vector2(2.15, 1.9)
 
-[connection signal="area_entered" from="." to="." method="_on_Garbage_body_entered"]
+[node name="TrashPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4vymr")
+
+[node name="TrashPathSpawn" type="PathFollow2D" parent="TrashPath"]
+position = Vector2(-5, -14)
+rotation = -2.27069

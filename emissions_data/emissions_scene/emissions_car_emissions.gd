@@ -1,5 +1,6 @@
 extends Area2D
 
+var text_node
 var cloud_pos
 var self_pos
 @export var emission_y_pos = 330
@@ -18,16 +19,17 @@ func _process(delta):
 	$".".position.y += car_speed
 	pass
 
+func passData(score_node):
+	text_node = score_node
 
 func _on_child_entered_tree(node):
-	node.position.x = node.get_parent().get_parent().get_child(3).position.x + emission_x_pos
+	node.position.x = node.get_parent().get_parent().get_child(2).position.x + emission_x_pos
 	node.position.y = emission_y_pos
 
 	pass # Replace with function body.
 
 
 func _on_area_entered(area):
-	score_up.emit()
-	print("emitted score_up")
+	text_node.text = str(int(text_node.text) + 1)
 	area.queue_free()
 	pass # Replace with function body.
