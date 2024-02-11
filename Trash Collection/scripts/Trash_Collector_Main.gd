@@ -1,25 +1,32 @@
-extends Node
+extends Node # for trash movement
 @export var trash_scene: PackedScene
 var score
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	new_game()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-# start timers for game
-func _on_start_timer_timeout():
-	$Trash_Timer.start()
-	$Score_Timer.start()
-	
 # get all game variables set up
 func new_game():
 	score = 0
 	$Player_Collector.start($Start_Position.position)
 	$Start_Timer.start()
+
+func end_game(): #!!!!!!
+	$"Message".hide() # make sure it's the right message
+	pass #fill in later 
+
+func _on_score_timer_timeout():
+	end_game()
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	new_game() # may need to be replaced with pass once everything's working (unlikely)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+# begin countdown and trash generation 
+func _on_start_timer_timeout():
+	$Trash_Timer.start()
+	$Score_Timer.start()
 	
 #update score whenever player collects a piece of trash
 func _on_player_collector_collect_trash():
@@ -55,7 +62,3 @@ func _on_trash_timer_timeout():
 	#generate trash (no problemo)
 	add_child(trash)
 	
-
-
-func _on_score_timer_timeout():
-	pass # Replace with function body.

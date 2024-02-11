@@ -11,7 +11,7 @@ _data = {
 }
 point_count = 2
 
-[node name="Main_Trash_Collector" type="Node"]
+[node name="Main" type="Node"]
 script = ExtResource("1_jp1ol")
 trash_scene = ExtResource("2_22ey6")
 
