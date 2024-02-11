@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://m8ge06w6rcfs"]
+[gd_scene load_steps=8 format=3 uid="uid://m8ge06w6rcfs"]
 
 [ext_resource type="Script" path="res://emissions_data/emissions_scene/emissions_car_player.gd" id="1_xo6ii"]
 [ext_resource type="Texture2D" uid="uid://bqr7lemd0hco4" path="res://emissions_data/emissions_game_images/pixel_art_car_top_emissions_dark_shadow.png" id="2_7jlpx"]
 [ext_resource type="Texture2D" uid="uid://kg5c776t7qpi" path="res://emissions_data/emissions_game_images/cloud.svg" id="3_npvh8"]
+[ext_resource type="AudioStream" uid="uid://cf0xcwgq3x5x5" path="res://emissions_data/emissions_sounds/rally-car-idle-loop-14-32339.mp3" id="4_6j2v5"]
+[ext_resource type="Script" path="res://emissions_data/emissions_scene/engine_sound.gd" id="5_6twhr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2537d"]
 size = Vector2(970.667, 490)
@@ -36,3 +38,10 @@ visible = false
 z_as_relative = false
 position = Vector2(42, 313)
 texture = ExtResource("3_npvh8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6j2v5")
+autoplay = true
+script = ExtResource("5_6twhr")
+
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]
