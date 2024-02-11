@@ -48,7 +48,6 @@ func _process(delta):
 		await get_tree().create_timer(5.0).timeout
 		get_tree().change_scene_to_file("res://emissions_data/emissions.tscn")
 		
-#>>>>>>> Stashed changes
 	pass
 
 
