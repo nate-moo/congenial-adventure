@@ -12,23 +12,39 @@ offset_right = 963.0
 offset_bottom = 52.0
 size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 31
-text = "Score: "
+text = "0"
 metadata/_edit_use_anchors_ = true
 
 [node name="Message" type="Label" parent="."]
-offset_left = 336.0
-offset_top = 472.0
-offset_right = 871.0
-offset_bottom = 528.0
+offset_left = 346.0
+offset_top = 574.0
+offset_right = 873.0
+offset_bottom = 630.0
 theme_override_font_sizes/font_size = 21
+text = "Arrow keys to move. You have 60 seconds to collect as much trash as you can!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Countdown" type="Timer" parent="."]
 wait_time = 60.0
 one_shot = true
 
 [node name="TakeYerMarks" type="Timer" parent="."]
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Replay" type="Button" parent="."]
+offset_left = 350.0
+offset_top = 375.0
+offset_right = 550.0
+offset_bottom = 425.0
+text = "Play Again"
+
+[node name="Main_Menu" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
 [connection signal="timeout" from="TakeYerMarks" to="." method="_on_take_yer_marks_timeout"]

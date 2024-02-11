@@ -24,19 +24,23 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_xji5b")
 
-[node name="Player_Collector" parent="." instance=ExtResource("3_kcwbf")]
-position = Vector2(95, 83)
+[node name="HUD" parent="." instance=ExtResource("4_1odo4")]
 
 [node name="Trash_Timer" type="Timer" parent="."]
 
-[node name="Score_Timer" type="Timer" parent="."]
+[node name="Time_Limit" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 
-[node name="Start_Timer" type="Timer" parent="."]
+[node name="Countdown" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
+[node name="Player_Collector" parent="." instance=ExtResource("3_kcwbf")]
+position = Vector2(95, 83)
+
 [node name="Start_Position" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(575, 550)
 
 [node name="Trash_Path" type="Path2D" parent="."]
 curve = SubResource("Curve2D_vtkkn")
@@ -44,10 +48,7 @@ curve = SubResource("Curve2D_vtkkn")
 [node name="Trash_Spawn_Area" type="PathFollow2D" parent="Trash_Path"]
 position = Vector2(-8, 0)
 
-[node name="HUD" parent="." instance=ExtResource("4_1odo4")]
-
-[connection signal="collect_trash" from="Player_Collector" to="." method="_on_player_collector_collect_trash"]
 [connection signal="timeout" from="Trash_Timer" to="." method="_on_trash_timer_timeout"]
-[connection signal="timeout" from="Score_Timer" to="." method="_on_score_timer_timeout"]
-[connection signal="timeout" from="Start_Timer" to="." method="_on_start_timer_timeout"]
-[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="Time_Limit" to="." method="_on_Time_Limit_timeout"]
+[connection signal="timeout" from="Countdown" to="." method="_on_start_timer_timeout"]
+[connection signal="collect_trash" from="Player_Collector" to="." method="_on_player_collector_collect_trash"]

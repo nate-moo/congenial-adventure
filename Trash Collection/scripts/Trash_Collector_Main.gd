@@ -2,33 +2,7 @@ extends Node # for trash movement
 @export var trash_scene: PackedScene
 var score
 
-# get all game variables set up
-func new_game():
-	score = 0
-	$Player_Collector.start($Start_Position.position)
-	$Start_Timer.start()
-
-func end_game(): #!!!!!!
-	#$Message.hide() # make sure it's the right message
-	pass #fill in later 
-
-func _on_score_timer_timeout():
-	end_game()
-
-# begin countdown and trash generation 
-func _on_start_timer_timeout():
-	$Trash_Timer.start()
-	$Score_Timer.start()
-	
-#update score whenever player collects a piece of trash
-func _on_player_collector_collect_trash():
-	score += 1
-	
-#func add_point():
-	#score +=1
-# may need rearranging for other character to get points?
-
-# generating trash from timer
+# Process to generate trash
 func _on_trash_timer_timeout():
 	# new piece of garbage
 	var trash = trash_scene.instantiate()
@@ -53,9 +27,42 @@ func _on_trash_timer_timeout():
 	
 	#generate trash (no problemo)
 	add_child(trash)
+
+# Starting and stopping rounds
+func new_game():
+	score = 0
+	$Player_Collector.start($Start_Position.position) # initiate player
+	$Countdown.start() # 3 second timer before going into game
+
+func end_game(): 
+	$Trash_Timer.stop()  # stop generating trash
+	# get score from HUD
+	
+
+# 3 second timer before official game countdown and trash generation 
+func _on_start_timer_timeout():
+	$Trash_Timer.start()
+	$Time_Limit.start() # CURRENTLY SET TO 10s FOR TESTING - CHANGE!!!!!!
+
+# Stop game when timer runs out
+func _on_Time_Limit_timeout():
+	end_game()
+	
+#update score whenever player collects a piece of trash
+func _on_player_collector_collect_trash():
+	score += 1
+	
+#func add_point():
+	#score +=1
+# may need rearranging for other character to get points?
 	
 func _ready():
-	new_game() # may need to be replaced with pass once everything's working (unlikely)
+	pass
+	#new_game() # may need to be replaced with pass once everything's working (unlikely)
 
 func _process(delta):
 	pass
+	# update score constantly?
+
+
+

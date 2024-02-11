@@ -32,7 +32,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrome"]
-size = Vector2(114, 171.438)
+size = Vector2(114, 150.776)
 
 [node name="Player_Collector" type="Area2D"]
 position = Vector2(60, 78)
@@ -45,7 +45,7 @@ sprite_frames = SubResource("SpriteFrames_00n7q")
 animation = &"trash-happy"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4.75005)
+position = Vector2(0, 4.50008)
 scale = Vector2(1, 0.89537)
 shape = SubResource("RectangleShape2D_jrome")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
