@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://vreb6ncene4f"]
+
+[ext_resource type="Script" path="res://emissions_data/emissions_scene/emissions_signals.gd" id="1_tatp0"]
+
+[node name="EmissionsSignals" type="Node"]
+script = ExtResource("1_tatp0")

@@ -8,6 +8,7 @@ var screen_size_original
 var vehicle_size
 var emission
 var delta_full = 0
+var game_over = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+<<<<<<< Updated upstream
 	var velocity = Vector2.ZERO
 	delta_full += delta
 	if Input.is_action_pressed("car_left"):
@@ -45,4 +47,33 @@ func _process(delta):
 	position += velocity * delta
 	
 	position = position.clamp(Vector2.ZERO, screen_size)
+=======
+	if (game_over == 0):
+		var velocity = Vector2.ZERO
+		delta_full += delta
+		if Input.is_action_pressed("car_left"):
+			velocity.x += -1
+		if Input.is_action_pressed("car_right"):
+			velocity.x += 1
+		if Input.is_action_pressed("emit_fumes"):
+			if (delta_full > emit_time):
+				delta_full = 0
+				var emission_instance = emission.instantiate()
+				emission_instance.passData(get_parent().get_node('VBoxContainer/ScoreLabel/ScoreCount')) # VBoxContainer/ScoreLabel/ScoreCount
+				get_parent().add_child(emission_instance)
+		if velocity.length() > 0:
+			velocity = velocity.normalized() * player_speed
+		position += velocity * delta
+		
+		position = position.clamp(Vector2.ZERO, screen_size)
+	else:
+		await get_tree().create_timer(5.0).timeout
+		get_tree().change_scene_to_file("res://emissions_data/emissions.tscn")
+		
+>>>>>>> Stashed changes
 	pass
+
+
+func _on_timer_2_timeout():
+	game_over = 1
+	pass # Replace with function body.

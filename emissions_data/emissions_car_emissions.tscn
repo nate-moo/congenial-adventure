@@ -15,7 +15,7 @@ position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_l2ut6")
 
 [node name="Cloud" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-1, 0.5)
+position = Vector2(-1, 1.5)
 scale = Vector2(0.385243, 0.311927)
 texture = ExtResource("1_qwuoo")
 
