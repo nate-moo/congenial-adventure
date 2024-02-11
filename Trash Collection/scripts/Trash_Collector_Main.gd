@@ -9,19 +9,11 @@ func new_game():
 	$Start_Timer.start()
 
 func end_game(): #!!!!!!
-	$"Message".hide() # make sure it's the right message
+	#$Message.hide() # make sure it's the right message
 	pass #fill in later 
 
 func _on_score_timer_timeout():
 	end_game()
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	new_game() # may need to be replaced with pass once everything's working (unlikely)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 # begin countdown and trash generation 
 func _on_start_timer_timeout():
@@ -62,3 +54,8 @@ func _on_trash_timer_timeout():
 	#generate trash (no problemo)
 	add_child(trash)
 	
+func _ready():
+	new_game() # may need to be replaced with pass once everything's working (unlikely)
+
+func _process(delta):
+	pass

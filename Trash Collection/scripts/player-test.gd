@@ -33,7 +33,15 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false #collsions sohould be on!!
 
-func _on_Player_Collector_body_entered(_body): #added underscore due to docs?
+func _on_Player_Collector_body_entered(body):
+	print("body entered ") #added underscore due to docs?
 	collect_trash.emit()
 	$AnimatedSprite2D.animation = "trash-happy"
+	$AnimatedSprite2D.play()
+	body.queue_free() # deletes object once collected
 	#this might be an area function, check for later
+
+
+func _on_area_entered(area):
+	print("body entered 2")
+	pass # Replace with function body.

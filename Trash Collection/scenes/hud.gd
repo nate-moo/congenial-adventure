@@ -4,8 +4,8 @@ signal end_game
 var countdown = 3
 
 func show_message(text): # provide text for argument!
-	$"Message".text = text
-	$"Message".show()
+	$Message.text = text
+	$Message.show()
 #	$"MessageTimer".start()
 
 func _on_take_yer_marks_timeout():

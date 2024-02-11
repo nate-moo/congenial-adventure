@@ -19,9 +19,10 @@ metadata/_edit_use_anchors_ = true
 offset_left = 336.0
 offset_top = 472.0
 offset_right = 871.0
-offset_bottom = 502.0
+offset_bottom = 528.0
 theme_override_font_sizes/font_size = 21
-text = "Arrow Keys to move - catch as much trash as you can! "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Countdown" type="Timer" parent="."]
 wait_time = 60.0
