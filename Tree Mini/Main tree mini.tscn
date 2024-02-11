@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b42kwyk4cjbb2" path="res://Tree Mini/new_player.tscn" id="1_db0ps"]
 [ext_resource type="Script" path="res://Tree Mini/Main tree mini.gd" id="1_ednvm"]
-[ext_resource type="PackedScene" uid="uid://caarr2hchft7t" path="res://Tree Mini/tree hud.tscn" id="2_hucrj"]
+[ext_resource type="PackedScene" path="res://Tree Mini/tree hud.tscn" id="2_hucrj"]
 [ext_resource type="Script" path="res://Tree Mini/Button.gd" id="2_k12ka"]
 [ext_resource type="Script" path="res://Tree Mini/TreeSpawnZone.gd" id="3_v1o6r"]
 [ext_resource type="Texture2D" uid="uid://crah2sfhuym8g" path="res://Tree Mini/Img Trees/Bard_Generated_Image (1).jpg" id="4_7ak8a"]

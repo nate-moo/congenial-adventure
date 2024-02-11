@@ -48,6 +48,7 @@ curve = SubResource("Curve2D_vtkkn")
 [node name="Trash_Spawn_Area" type="PathFollow2D" parent="Trash_Path"]
 position = Vector2(-8, 0)
 
+[connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="Trash_Timer" to="." method="_on_trash_timer_timeout"]
 [connection signal="timeout" from="Time_Limit" to="." method="_on_Time_Limit_timeout"]
 [connection signal="timeout" from="Countdown" to="." method="_on_start_timer_timeout"]
