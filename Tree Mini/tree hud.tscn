@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://caarr2hchft7t"]
+[gd_scene load_steps=3 format=3 uid="uid://caarr2hchft7t"]
 
 [ext_resource type="Script" path="res://Trash Collection/scripts/hud.gd" id="1_be6xj"]
+[ext_resource type="Script" path="res://Tree Mini/Message.gd" id="2_mlplv"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_be6xj")
@@ -17,15 +18,16 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Message" type="Label" parent="."]
-offset_left = 346.0
-offset_top = 574.0
-offset_right = 873.0
-offset_bottom = 630.0
+offset_left = 358.0
+offset_top = 433.0
+offset_right = 885.0
+offset_bottom = 496.0
 theme_override_font_sizes/font_size = 21
 text = "WASD keys to move. You have 60 seconds to burn as many trees as you can!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+script = ExtResource("2_mlplv")
 
 [node name="Countdown" type="Timer" parent="."]
 wait_time = 60.0

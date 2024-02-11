@@ -12,9 +12,9 @@ func passData(width_pass, height_pass):
 	height = height_pass
 
 func _ready():
-	score_label = $HUD/Score
 	$'.'.position.y = width
 	$'.'.position.x = height
+	score_label = $HUD/Score
 	if (randi() % 2 == 0):
 		$TreeBurning.play("Green")
 		color = "green"
@@ -26,7 +26,7 @@ func _ready():
 func _on_tree_burning_animation_looped():
 	if ($TreeBurning.animation == "Green Burn" or $TreeBurning.animation == "Orange Burn"):
 		$TreeBurning.queue_free()
-		score_label += 1
+		score_label = score + 1
 
 func _on_area_2d_2_area_entered(area):
 	if self.get_parent() != area.get_parent():
